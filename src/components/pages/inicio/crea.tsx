@@ -2,47 +2,15 @@
 
 import Section from '@/components/ui/section';
 import Title from '@/components/ui/title';
-import { IconServerBolt } from '@tabler/icons-react';
+import { InicioSections } from '@/config/pages';
+import { CREA_TU_SERVIDOR_CONTENT } from '@/config/content/inicio';
 import { motion } from 'motion/react';
-
-const features = [
-  {
-    icon: IconServerBolt,
-    title: 'Servidores & Soporte 24/1',
-    description: 'El mejor equipo de atención al cliente de la industria con asistencia de chat en vivo las 24/7 de administradores de servidores.',
-  },
-  {
-    icon: IconServerBolt,
-    title: 'Servidores & Soporte 24/2',
-    description: 'El mejor equipo de atención al cliente de la industria con asistencia de chat en vivo las 24/7 de administradores de servidores.',
-  },
-  {
-    icon: IconServerBolt,
-    title: 'Servidores & Soporte 24/3',
-    description: 'El mejor equipo de atención al cliente de la industria con asistencia de chat en vivo las 24/7 de administradores de servidores.',
-  },
-  {
-    icon: IconServerBolt,
-    title: 'Servidores & Soporte 24/4',
-    description: 'El mejor equipo de atención al cliente de la industria con asistencia de chat en vivo las 24/7 de administradores de servidores.',
-  },
-  {
-    icon: IconServerBolt,
-    title: 'Servidores & Soporte 24/5',
-    description: 'El mejor equipo de atención al cliente de la industria con asistencia de chat en vivo las 24/7 de administradores de servidores.',
-  },
-  {
-    icon: IconServerBolt,
-    title: 'Servidores & Soporte 24/6',
-    description: 'El mejor equipo de atención al cliente de la industria con asistencia de chat en vivo las 24/7 de administradores de servidores.',
-  },
-];
 
 function CreaCards() {
   return (
     <div className="glassmorphism w-full rounded-2xl p-6 md:p-8 grid sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
       {
-        features.map((feature) => (
+        CREA_TU_SERVIDOR_CONTENT.features.map((feature) => (
           <motion.div
             key={feature.title}
             className="flex flex-col gap-4 bg-[#111928]/75 rounded-lg p-6 pb-10 backdrop-blur-lg"
@@ -53,7 +21,7 @@ function CreaCards() {
           >
             <feature.icon className="size-16 mb-3" />
             <h3 className="text-xl font-semibold">{feature.title}</h3>
-            <p>{feature.description}</p>
+            <p>{feature.content}</p>
           </motion.div>
         ))
       }
@@ -63,7 +31,10 @@ function CreaCards() {
 
 export default function Crea() {
   return (
-    <Section className="flex flex-col gap-14 my-32">
+    <Section
+      id={InicioSections.CREA_TU_SERVIDOR}
+      className="flex flex-col gap-14 my-32"
+    >
       <Title className="flex flex-col">
         <span>
           Crea tu servidor

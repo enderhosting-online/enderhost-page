@@ -13,7 +13,7 @@ export default function FooterLinks() {
           />
         ))
       }
-      <Link href="https://acm.org" className="flex justify-center basis-36 max-h-60 grow self-center">
+      <Link href="https://acm.org" className="flex justify-center basis-36 max-h-60 grow self-start">
         <img
           src="https://ynoa-uploader.ynoacamino.site/uploads/1743369112_Component%201%20%285%29.png"
           alt="Yn Hosting Logo"

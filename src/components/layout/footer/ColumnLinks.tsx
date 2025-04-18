@@ -18,7 +18,7 @@ export default function ColumnLinks(page: Page) {
   } = page;
 
   return (
-    <div className="flex flex-col gap-2 grow basis-36">
+    <div className="flex flex-col gap-2 grow basis-36 mb-4">
       <Link
         href={path}
         className="font-medium"

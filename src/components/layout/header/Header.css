@@ -1,0 +1,15 @@
+#header {
+  animation: enhance-header linear both;
+  animation-timeline: scroll(root block);
+  animation-range: 0 200vh;
+  background-color: rgba(25, 29, 38, 90);
+}
+
+@keyframes enhance-header {
+  0% {
+    background-color: rgba(25, 29, 38, 90);
+  }
+  100% {
+    background-color: rgba(14, 17, 23, 90);
+  }
+}

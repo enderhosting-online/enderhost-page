@@ -2,21 +2,16 @@
 
 import { Button } from '@/components/ui/button';
 import Section from '@/components/ui/section';
+import { InicioSections } from '@/config/pages';
 import { IconCircleCheckFilled } from '@tabler/icons-react';
 import { motion } from 'motion/react';
-
-const skills = [
-  'Server hosting for 70+ games',
-  'Minijuegos Prefabricados',
-  'Soporte 24/7 en Chats y Tickets',
-  'Full file access',
-];
+import { HERO_CONTENT } from '@/config/content/inicio';
 
 function Skills() {
   return (
     <div className="flex flex-wrap gap-x-12 gap-y-3">
       {
-      skills.map((skill, i) => (
+      HERO_CONTENT.features.map((skill, i) => (
         <motion.span
           key={skill}
           className="min-w-fit flex gap-2"
@@ -35,19 +30,15 @@ function Skills() {
 
 export default function Hero() {
   return (
-    <Section className="grid md:grid-cols-2 my-6 md:my-20">
+    <Section
+      id={InicioSections.COMENZAR_AHORA}
+      className="grid md:grid-cols-2 my-6 md:my-20"
+    >
       <div className="flex flex-col gap-6 md:gap-10">
         <h1 className="uppercase font-black text-4xl md:text-5xl w-full max-w-md tracking-wider flex flex-col gap-4">
           <span>
             Hosting de servidores de minecraft
           </span>
-          {/* <motion.span
-            className="text-6xl"
-            transition={{ delay: 0.2 }}
-            animate={{ rotateX: 50, opacity: 0 }}
-          >
-            Bedrock
-          </motion.span> */}
         </h1>
         <Skills />
         <div>

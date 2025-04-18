@@ -1,6 +1,7 @@
 import Section from '@/components/ui/section';
 import Title from '@/components/ui/title';
-import { IconAlertSquareRounded } from '@tabler/icons-react';
+import { VERSIONES_CONTENT } from '@/config/content/inicio';
+import { InicioSections } from '@/config/pages';
 
 const javaBedrock = [
   {
@@ -34,51 +35,18 @@ function VersionsJavaBedrock() {
   );
 }
 
-const otherVersions = [
-  {
-    icon: IconAlertSquareRounded,
-    title: 'Mods 1',
-    description: 'Usa Forge para combinar tus propios mods o prueba cualquiera de los modpacks populares de Feed The Beast,ATL, Voids Wrath, Technic.',
-  },
-  {
-    icon: IconAlertSquareRounded,
-    title: 'Mods 2',
-    description: 'Usa Forge para combinar tus propios mods o prueba cualquiera de los modpacks populares de Feed The Beast,ATL, Voids Wrath, Technic.',
-  },
-  {
-    icon: IconAlertSquareRounded,
-    title: 'Mods 3',
-    description: 'Usa Forge para combinar tus propios mods o prueba cualquiera de los modpacks populares de Feed The Beast,ATL, Voids Wrath, Technic.',
-  },
-  {
-    icon: IconAlertSquareRounded,
-    title: 'Mods 4',
-    description: 'Usa Forge para combinar tus propios mods o prueba cualquiera de los modpacks populares de Feed The Beast,ATL, Voids Wrath, Technic.',
-  },
-  {
-    icon: IconAlertSquareRounded,
-    title: 'Mods 5',
-    description: 'Usa Forge para combinar tus propios mods o prueba cualquiera de los modpacks populares de Feed The Beast,ATL, Voids Wrath, Technic.',
-  },
-  {
-    icon: IconAlertSquareRounded,
-    title: 'Mods 6',
-    description: 'Usa Forge para combinar tus propios mods o prueba cualquiera de los modpacks populares de Feed The Beast,ATL, Voids Wrath, Technic.',
-  },
-];
-
 function OtherVersions() {
   return (
     <div className="grid md:grid-cols-2 lg:grid-cols-3 w-full gap-6 md:gap-8">
       {
-        otherVersions.map(({ icon: Icon, description, title }) => (
+        VERSIONES_CONTENT.versions.map(({ icon: Icon, content, title }) => (
           <div key={title} className="flex flex-col p-4 md:p-6 pb-10 gap-3 md:gap-4 rounded-xl border-2 border-[#24282F] bg-[#171B22] hover:border-[#616671] transition-colors relative">
             <Icon className="size-11 md:size-16 md:mb-3" />
             <h3 className="font-semibold text-xl">
               {title}
             </h3>
             <p className="">
-              {description}
+              {content}
             </p>
           </div>
         ))
@@ -89,7 +57,10 @@ function OtherVersions() {
 
 export default function Versiones() {
   return (
-    <Section className="flex flex-col gap-14 my-32">
+    <Section
+      id={InicioSections.SOPORTAMOS_TODOS_LOS_MINECRAFTS}
+      className="flex flex-col gap-14 my-32"
+    >
       <Title className="flex flex-col">
         <span>
           Soportamos todos

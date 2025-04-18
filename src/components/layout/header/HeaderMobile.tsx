@@ -9,36 +9,36 @@ import {
   SheetTitle,
   SheetTrigger,
 } from '@/components/ui/sheet';
-// import pagesConfig from '@/config/pages';
+import pagesConfig from '@/config/pages';
 // import { cn } from '@/lib/utils';
 import { Menu } from 'lucide-react';
-import { useState } from 'react';
-// import { useRouter } from 'next/navigation';
-// import { ReactNode, useState } from 'react';
+import { useState, ReactNode } from 'react';
+import { useRouter } from 'next/navigation';
+import { cn } from '@/lib/utils';
 
-// function LinkMobile(
-//   props: React.ComponentProps<'a'> & { children: ReactNode; setSheetOpen:
-//  (value: boolean) => void },
-// ) {
-//   const { push } = useRouter();
-//   const {
-//     href, setSheetOpen, children, ...rest
-//   } = props;
+function LinkMobile(
+  props: React.ComponentProps<'a'> & { children: ReactNode; setSheetOpen:
+  (value: boolean) => void },
+) {
+  const { push } = useRouter();
+  const {
+    href, setSheetOpen, children, ...rest
+  } = props;
 
-//   return (
-//     <a
-//       {...rest}
-//       href={href?.toString()}
-//       onClick={(e) => {
-//         e.preventDefault();
-//         setSheetOpen(false);
-//         push(href?.toString() || '');
-//       }}
-//     >
-//       {children}
-//     </a>
-//   );
-// }
+  return (
+    <a
+      {...rest}
+      href={href?.toString()}
+      onClick={(e) => {
+        e.preventDefault();
+        setSheetOpen(false);
+        push(href?.toString() || '');
+      }}
+    >
+      {children}
+    </a>
+  );
+}
 
 export default function HeaderMobile() {
   const [sheetOpen, setSheetOpen] = useState(false);
@@ -62,55 +62,36 @@ export default function HeaderMobile() {
                   <span>
                     Estudiantil
                   </span>
-                  <span className="text-background bg-primary rounded-lg px-3 py-2">
-                    ACM
-                  </span>
                 </span>
               </SheetTitle>
             </div>
           </SheetHeader>
-          <nav className="flex flex-col justify-center gap-6 px-4 font-medium text-primary/80">
-            {/* {pagesConfig.pages.map((pagina) => (
+          <nav className="flex flex-col justify-center gap-6 px-4 font-medium text-foreground">
+            {pagesConfig.pages.map((pagina) => (
               <div key={pagina.path}>
                 <LinkMobile
                   href={pagina.path}
-                  className={cn('px-2 py-2 text-primary font-semibold mb-4 hover:underline', {
-                    'bg-primary text-background rounded-sm': (path.includes(
-                    pagina.path) && pagina.path !== '/') || path === pagina.path,
-                  })}
-                  aria-current={path === pagina.path ? 'page' : undefined}
+                  className={cn('px-2 py-2 text-foreground/70 font-semibold mb-4 hover:underline')}
                   setSheetOpen={setSheetOpen}
                 >
                   {pagina.name}
                 </LinkMobile>
                 <div className="flex flex-col pl-5 py-2">
                   {
-                pagina.sections && pagina.sections.map((section) => (
-                  <LinkMobile
-                    key={section.id}
-                    href={`${pagina.path}#${section.id}`}
-                    className="px-1 py-1"
-                    setSheetOpen={setSheetOpen}
-                  >
-                    {section.name}
-                  </LinkMobile>
-                ))
-                }
-                  {
-                pagina.pages && pagina.pages.map((subPage) => (
-                  <LinkMobile
-                    key={subPage.path}
-                    href={subPage.path}
-                    className="px-1 py-1"
-                    setSheetOpen={setSheetOpen}
-                  >
-                    {subPage.name}
-                  </LinkMobile>
-                ))
-                }
+                    pagina.sections && pagina.sections.map((section) => (
+                      <LinkMobile
+                        key={section.id}
+                        href={`${pagina.path}#${section.id}`}
+                        className="px-1 py-1 font-normal"
+                        setSheetOpen={setSheetOpen}
+                      >
+                        {section.name}
+                      </LinkMobile>
+                    ))
+                  }
                 </div>
               </div>
-            ))} */}
+            ))}
           </nav>
         </ScrollArea>
       </SheetContent>

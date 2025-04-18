@@ -10,6 +10,7 @@
 
 @theme inline {
   --color-background: var(--background);
+  --color-background-from: var(--background-from);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-inter);
   --font-mono: var(--font-roboto-mono);
@@ -50,6 +51,7 @@
 
 :root {
   --background: oklch(17.73% 0.0133 264.15);
+  --background-from: oklch(0.23 0.0181 266.25);
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.21 0.006 285.885);
   --card-foreground: oklch(0.985 0 0);
@@ -136,4 +138,23 @@
       hsl(258.95, 55.00000000000001%, 28.999999999999996%) 0,
       transparent 55%
     );
+}
+
+body::-webkit-scrollbar {
+  width: 10px; /* o el tamaño que quieras */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.2); /* o totalmente transparente */
+}
+
+:target,
+section[id],
+div[id],
+button[id] {
+  scroll-margin-top: 4.5rem;
+}
+
+html {
+  scroll-behavior: smooth;
 }

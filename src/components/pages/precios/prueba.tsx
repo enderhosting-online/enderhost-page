@@ -1,5 +1,6 @@
 import Section from '@/components/ui/section';
 import Title from '@/components/ui/title';
+import { PreciosSections } from '@/config/pages';
 
 function Step(
   { index, title, children }: { index: number, title: string, children?: React.ReactNode },
@@ -21,7 +22,10 @@ function Step(
 
 export default function Prueba() {
   return (
-    <Section className="flex flex-col gap-16">
+    <Section
+      id={PreciosSections.HAZ_PRUEBA_GRATIS}
+      className="flex flex-col gap-16 my-40"
+    >
       <Title>
         <span>
           Haz una prueba gratis

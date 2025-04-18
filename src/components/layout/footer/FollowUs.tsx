@@ -22,7 +22,7 @@ export default function FollowUs() {
         <Facebook strokeWidth="1.5" />
       </Link>
       <Link
-        href="https://youtube.com"
+        href="https://wa.me/51935761921"
         className="hover:text-muted-foreground"
       >
         <IconBrandWhatsapp strokeWidth="1.5" />
