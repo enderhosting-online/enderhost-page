@@ -4,6 +4,7 @@ import './globals.css';
 import Header from '@/components/layout/header/Header';
 import Footer from '@/components/layout/footer/Footer';
 import Gradient from '@/components/layout/global/gradient';
+import ProgressBarProvider from '@/components/providers/ProgressBarProvider';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -25,12 +26,14 @@ export default function RootLayout({
       <body
         className={`${inter.variable} font-sans antialiased flex flex-col items-center`}
       >
-        <Gradient />
-        <Header />
-        <main className="flex flex-col items-center w-full">
-          {children}
-        </main>
-        <Footer />
+        <ProgressBarProvider>
+          <Gradient />
+          <Header />
+          <main className="flex flex-col items-center w-full">
+            {children}
+          </main>
+          <Footer />
+        </ProgressBarProvider>
       </body>
     </html>
   );

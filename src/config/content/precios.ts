@@ -9,13 +9,15 @@ import {
   UserCog,
   PackageCheck,
   MonitorCheck,
+  History,
 } from 'lucide-react';
 
 export const PRECIOS = [
   {
-    name: 'Carbon',
+    name: 'Hierro',
     description: 'Ideal para comenzar en Minecraft con buen rendimiento y a bajo costo.',
     price: 40,
+    texture: 'https://ynoa-uploader.ynoacamino.site/uploads/1745094817_Block_of_Iron_%28texture%29_JE3_BE3.webp',
     features: [
       {
         icon: MemoryStick,
@@ -39,7 +41,7 @@ export const PRECIOS = [
       },
       {
         icon: AppWindow,
-        name: 'Acceso completo (SFTP + Panel Pterodactyl)',
+        name: 'Acceso completo (Panel Pterodactyl)',
       },
       {
         icon: Signal,
@@ -55,7 +57,7 @@ export const PRECIOS = [
       },
       {
         icon: MonitorCheck,
-        name: 'Encendido automático 24/7',
+        name: 'Siempre encendido 24/7',
       },
     ],
   },
@@ -63,10 +65,11 @@ export const PRECIOS = [
     name: 'Diamante',
     description: 'Un plan equilibrado para jugadores frecuentes y servidores personalizados.',
     price: 50,
+    texture: 'https://ynoa-uploader.ynoacamino.site/uploads/1745095652_BlockSprite_block-of-diamond%20%281%29.webp',
     features: [
       {
         icon: MemoryStick,
-        name: '4GB de RAM',
+        name: '6GB de RAM',
       },
       {
         icon: UsersRound,
@@ -81,12 +84,16 @@ export const PRECIOS = [
         name: 'Versiones, Vanilla y Plugins',
       },
       {
+        icon: History,
+        name: 'Backups semanales automáticos',
+      },
+      {
         icon: Smartphone,
         name: 'Bedrock / Pocket Edition',
       },
       {
         icon: AppWindow,
-        name: 'Acceso completo (SFTP + Panel Pterodactyl)',
+        name: 'Acceso completo (Panel Pterodactyl)',
       },
       {
         icon: Signal,
@@ -102,7 +109,7 @@ export const PRECIOS = [
       },
       {
         icon: MonitorCheck,
-        name: 'Encendido automático 24/7',
+        name: 'Siempre encendido 24/7',
       },
     ],
   },
@@ -110,10 +117,11 @@ export const PRECIOS = [
     name: 'Netherita',
     description: 'Para comunidades exigentes y servidores con múltiples jugadores y mods.',
     price: 60,
+    texture: 'https://ynoa-uploader.ynoacamino.site/uploads/1745092849_b41b023af7bebaa4ce3a836bae51ab0642cd1d3076ee5d360bf77dcbb1e498e5.png',
     features: [
       {
         icon: MemoryStick,
-        name: '4GB de RAM',
+        name: '8GB de RAM',
       },
       {
         icon: UsersRound,
@@ -128,12 +136,16 @@ export const PRECIOS = [
         name: 'Versiones, Vanilla y Plugins',
       },
       {
+        icon: History,
+        name: 'Backups diarios automáticos',
+      },
+      {
         icon: Smartphone,
         name: 'Bedrock / Pocket Edition',
       },
       {
         icon: AppWindow,
-        name: 'Acceso completo (SFTP + Panel Pterodactyl)',
+        name: 'Acceso completo (Panel Pterodactyl)',
       },
       {
         icon: Signal,
@@ -149,7 +161,7 @@ export const PRECIOS = [
       },
       {
         icon: MonitorCheck,
-        name: 'Encendido automático 24/7',
+        name: 'Siempre encendido 24/7',
       },
     ],
   },
