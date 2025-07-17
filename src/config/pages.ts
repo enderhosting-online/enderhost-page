@@ -64,11 +64,11 @@ const pageConfig: PageConfigInterface = {
         },
       ],
     },
-    {
-      name: 'Conocenos',
-      path: '/conocenos',
-      sections: [],
-    },
+    // {
+    //   name: 'Conocenos',
+    //   path: '/conocenos',
+    //   sections: [],
+    // },
     {
       name: 'Precios',
       path: '/precios',
