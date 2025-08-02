@@ -9,7 +9,7 @@ import { HERO_CONTENT } from '@/config/content/inicio';
 
 function Skills() {
   return (
-    <div className="flex flex-wrap gap-x-12 gap-y-3">
+    <div className="flex flex-wrap gap-x-12 gap-y-3 w-full max-w-xl justify-center">
       {
       HERO_CONTENT.features.map((skill, i) => (
         <motion.span
@@ -32,13 +32,11 @@ export default function Hero() {
   return (
     <Section
       id={InicioSections.COMENZAR_AHORA}
-      className="grid md:grid-cols-2 my-6 md:my-20"
+      className="flex flex-col my-6 md:mt-28 md:mb-20"
     >
-      <div className="flex flex-col gap-6 md:gap-10">
-        <h1 className="uppercase font-black text-4xl md:text-5xl w-full max-w-md tracking-wider flex flex-col gap-4">
-          <span>
-            Hosting de servidores de minecraft
-          </span>
+      <div className="flex flex-col gap-6 md:gap-10 items-center">
+        <h1 className="uppercase font-black text-4xl md:text-7xl w-full max-w-2xl tracking-wider flex flex-col gap-4 text-center">
+          Hosting de servidores de minecraft
         </h1>
         <Skills />
         <div>
@@ -47,25 +45,6 @@ export default function Hero() {
           </Button>
         </div>
       </div>
-      <motion.div
-        className="w-full flex items-center justify-center md:justify-end my-10 md:my-0 md:h-[40rem]"
-        animate={{ y: 15 }}
-        transition={{
-          duration: 1.5,
-          repeat: Infinity,
-          ease: 'easeIn',
-          bounce: 0.04,
-          repeatType: 'reverse',
-        }}
-      >
-
-        <img
-          src="https://ynoa-uploader.ynoacamino.site/uploads/1743018518_image.webp"
-          alt="Minecraft"
-          className="w-full max-w-2xs md:max-w-sm"
-          fetchPriority="high"
-        />
-      </motion.div>
     </Section>
   );
 }
