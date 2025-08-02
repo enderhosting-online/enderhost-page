@@ -9,10 +9,5 @@ services:
       - ./uploads:/directus/uploads
       - ./extensions:/directus/extensions
       - ./data:/directus/data
-    environment:
-      DB_CLIENT: "sqlite3"
-      DB_FILENAME: "/directus/data/directus.db"
-
-      CACHE_ENABLED: "false"
     env_file:
       - ./.env
