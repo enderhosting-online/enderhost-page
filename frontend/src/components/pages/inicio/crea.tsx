@@ -8,7 +8,7 @@ import { motion } from 'motion/react';
 
 function CreaCards() {
   return (
-    <div className="glassmorphism w-full rounded-2xl p-6 md:p-8 grid sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
+    <div className="glassmorphism w-full rounded-xl p-6 md:p-8 grid sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
       {
         CREA_TU_SERVIDOR_CONTENT.features.map((feature) => (
           <motion.div
@@ -37,10 +37,10 @@ export default function Crea() {
     >
       <Title className="flex flex-col">
         <span>
-          Crea tu servidor
+          Características que
         </span>
         <span>
-          de Minecraft
+          hacen la diferencia
         </span>
       </Title>
       <CreaCards />

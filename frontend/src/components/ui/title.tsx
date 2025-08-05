@@ -16,7 +16,7 @@ function Title<T extends React.ElementType = 'h1'>({
   const Component = as || 'h1';
   return (
     <Component
-      className={cn('text-foreground text-4xl md:text-5xl rounded-lg py-4 text-center uppercase font-black w-full grid', className)}
+      className={cn('text-foreground text-4xl md:text-[2.65rem] rounded-lg py-4 text-center uppercase font-black w-full grid', className)}
       {...props}
     >
       {children}

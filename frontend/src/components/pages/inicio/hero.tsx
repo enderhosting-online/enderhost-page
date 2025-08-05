@@ -15,9 +15,9 @@ function Skills() {
         <motion.span
           key={skill}
           className="min-w-fit flex gap-2"
-          initial={{ opacity: 0, y: 15 }}
+          initial={{ opacity: 0, y: 25 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: i * 0.1 }}
+          transition={{ delay: i * 0.15 + 0.3 }}
         >
           <IconCircleCheckFilled className="fill-primary" />
           {skill}
@@ -32,16 +32,22 @@ export default function Hero() {
   return (
     <Section
       id={InicioSections.COMENZAR_AHORA}
-      className="flex flex-col my-6 md:mt-28 md:mb-20"
+      className="flex flex-col my-20 md:mt-32 md:mb-20"
     >
-      <div className="flex flex-col gap-6 md:gap-10 items-center">
-        <h1 className="uppercase font-black text-4xl md:text-7xl w-full max-w-2xl tracking-wider flex flex-col gap-4 text-center">
-          Hosting de servidores de minecraft
-        </h1>
+      <div className="flex flex-col gap-10 md:gap-12 items-center">
+        {/**/}
+        <div className="flex justify-center items-center relative">
+          <h1 className="uppercase font-black text-5xl md:text-6xl w-full max-w-2xl tracking-wider flex flex-col gap-4 text-center z-10">
+            Hosting de servidores de Minecraft
+          </h1>
+        </div>
         <Skills />
-        <div>
+        <div className="gap-6 grid grid-cols-2 w-full max-w-88">
+          <Button size="lg" className="w-full" variant="secondary">
+            Ver planes
+          </Button>
           <Button size="lg">
-            Comenzar ahora
+            ¡Prubalo gratis!
           </Button>
         </div>
       </div>

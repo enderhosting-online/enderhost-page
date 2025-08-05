@@ -2,14 +2,14 @@
   animation: enhance-header linear both;
   animation-timeline: scroll(root block);
   animation-range: 0 200vh;
-  background-color: rgba(25, 29, 38, 90);
+  background-color: rgba(20, 24, 33, 80);
 }
 
 @keyframes enhance-header {
   0% {
-    background-color: rgba(25, 29, 38, 90);
+    background-color: rgba(20, 24, 33, 80);
   }
   100% {
-    background-color: rgba(14, 17, 23, 90);
+    background-color: rgba(12, 15, 21, 80);
   }
 }

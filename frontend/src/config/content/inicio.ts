@@ -18,7 +18,7 @@ export const HERO_CONTENT = {
     'Personalizacion completa',
     'Rendimiento optimizado',
     'Soporte 24/7',
-    'Acceso completo a archivos y base de datos',
+    'Acceso completo a mods',
   ],
 };
 

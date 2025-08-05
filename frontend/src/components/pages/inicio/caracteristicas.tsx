@@ -16,7 +16,7 @@ function CaracteristicasSections() {
             className="grid md:grid-cols-2 gap-10 w-full items-center"
             whileInView={{ opacity: 1 }}
             initial={{ opacity: 0 }}
-            viewport={{ amount: 0.2, once: true }}
+            viewport={{ amount: 0.75, once: true }}
           >
             <div className="flex flex-col gap-6 md:gap-8">
               <h3 className="font-black uppercase text-2xl md:text-3xl">

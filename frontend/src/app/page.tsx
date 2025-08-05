@@ -7,15 +7,29 @@ import Versiones from '@/components/pages/inicio/versiones';
 import directus from '@/lib/directus';
 import { SimgleItem } from '@/types/directus';
 import { readItems } from '@directus/sdk';
-import { Metadata } from 'next';
+import { Metadata, ResolvingMetadata } from 'next';
 
-export async function generateMetadata(): Promise<Metadata> {
-  const globalMetadata = await directus.request(readItems('global')) as SimgleItem;
+export async function generateMetadata(
+  _params: any,
+  parent: ResolvingMetadata,
+): Promise<Metadata> {
+  const parentMetadata = await parent;
 
-  return {
-    title: globalMetadata.title,
-    description: globalMetadata.description,
-  };
+  try {
+    const globalMetadata = await directus.request(readItems('global_data')) as SimgleItem;
+
+    return {
+      title: globalMetadata.title,
+      description: globalMetadata.description,
+    };
+  } catch (error) {
+    console.error('Error al generar metadata:', error);
+
+    return {
+      title: parentMetadata.title,
+      description: parentMetadata.description,
+    };
+  }
 }
 
 export default function Home() {
