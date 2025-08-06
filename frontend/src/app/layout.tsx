@@ -9,12 +9,38 @@ import { metadataConfig } from '@/config/metadata';
 import { GoogleTagManager } from '@next/third-parties/google';
 import Particles from '@/components/layout/particles/particles';
 
+import directus from '@/lib/directus';
+import { SimgleItem } from '@/types/directus';
+import { readItems } from '@directus/sdk';
+import { ResolvingMetadata } from 'next';
+
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
 });
 
-export const metadata: Metadata = metadataConfig;
+export async function generateMetadata(
+  _params: any,
+  parent: ResolvingMetadata,
+): Promise<Metadata> {
+  const parentMetadata = await parent;
+
+  try {
+    const globalMetadata = await directus.request(readItems('global_data')) as SimgleItem;
+
+    return {
+      title: globalMetadata.title,
+      description: globalMetadata.description,
+    };
+  } catch (error) {
+    console.error('Error al generar metadata:', error);
+
+    return {
+      title: parentMetadata.title,
+      description: parentMetadata.description,
+    };
+  }
+}
 
 export default function RootLayout({
   children,
