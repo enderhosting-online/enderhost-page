@@ -5,40 +5,26 @@ import Header from '@/components/layout/header/Header';
 import Footer from '@/components/layout/footer/Footer';
 import Gradient from '@/components/layout/global/gradient';
 import ProgressBarProvider from '@/components/providers/ProgressBarProvider';
-import { metadataConfig } from '@/config/metadata';
 import { GoogleTagManager } from '@next/third-parties/google';
 import Particles from '@/components/layout/particles/particles';
 
-import directus from '@/lib/directus';
-import { SimgleItem } from '@/types/directus';
-import { readItems } from '@directus/sdk';
-import { ResolvingMetadata } from 'next';
+import { apiService } from '@/services/api';
 
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
 });
 
-export async function generateMetadata(
-  _params: any,
-  parent: ResolvingMetadata,
-): Promise<Metadata> {
-  const parentMetadata = await parent;
-
+export async function generateMetadata(): Promise<Metadata> {
   try {
-    const globalMetadata = await directus.request(readItems('global_data')) as SimgleItem;
+    const globalMetadata = await apiService.getGlobalData();
 
     return {
       title: globalMetadata.title,
       description: globalMetadata.description,
     };
   } catch (error) {
-    console.error('Error al generar metadata:', error);
-
-    return {
-      title: parentMetadata.title,
-      description: parentMetadata.description,
-    };
+    throw new Error('Error al generar metadata', { cause: error });
   }
 }
 

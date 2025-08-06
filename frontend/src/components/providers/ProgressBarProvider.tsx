@@ -6,7 +6,7 @@ export default function ProgressBarProvider({ children }: { children: React.Reac
   return (
     <ProgressProvider
       height="4px"
-      color="#ffffff33"
+      color="#422669"
       options={{ showSpinner: false }}
       shallowRouting
     >

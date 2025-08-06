@@ -1,6 +1,5 @@
-import directus, { extractImageUrl } from '@/lib/directus';
-import { readItems } from '@directus/sdk';
-import { SimgleItem } from '@/types/directus';
+import { extractImageUrl } from '@/lib/directus';
+import { apiService } from '@/services/api';
 import Link from 'next/link';
 import HeaderMobile from './HeaderMobile';
 import HeaderDesktop from './HeaderDesktop';
@@ -10,7 +9,7 @@ import './Header.css';
 export const revalidate = 60 * 60;
 
 export default async function Header() {
-  const globalMetadata = await directus.request(readItems('global_data')) as SimgleItem;
+  const globalData = await apiService.getGlobalData();
 
   return (
     <div
@@ -22,7 +21,7 @@ export default async function Header() {
           href="/"
         >
           <span className="flex items-center justify-center text-2xl font-extrabold gap-2">
-            <img src={extractImageUrl(globalMetadata.logo)} alt={globalMetadata.title} className="w-40" />
+            <img src={extractImageUrl(globalData.logo)} alt={globalData.title} className="w-40" />
           </span>
         </Link>
         <HeaderDesktop />
