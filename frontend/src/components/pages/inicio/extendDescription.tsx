@@ -2,25 +2,25 @@ import Section from '@/components/ui/section';
 import Title from '@/components/ui/title';
 import { InicioSections } from '@/config/pages';
 import { apiService } from '@/services/api';
-import HostingFeaturesCards from './hostingFeaturesCards';
+import ExtendDescriptionSections from './extendDescriptionSections';
 
-export default async function HostingFeatures() {
-  const hostingFeatures = await apiService.getHostingFeatures();
+export default async function ExtendDescription() {
+  const extendDescription = await apiService.getExtendDescriptionFeatures();
 
   return (
     <Section
-      id={InicioSections.CREA_TU_SERVIDOR}
+      id={InicioSections.CARACTERISTICAS}
       className="flex flex-col gap-14 my-32"
     >
       <Title className="flex flex-col">
         <span>
-          Características que
+          Características de
         </span>
         <span>
-          hacen la diferencia
+          nuestros servidores
         </span>
       </Title>
-      <HostingFeaturesCards hostingFeatures={hostingFeatures} />
+      <ExtendDescriptionSections extendDescription={extendDescription} />
     </Section>
   );
 }

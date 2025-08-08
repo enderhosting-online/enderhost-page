@@ -6,7 +6,7 @@ import {
   QuestionSection, VersionsFeature,
 } from '@/types/directus';
 import {
-  createDirectus, DirectusClient, readItems, rest, RestClient,
+  createDirectus, DirectusClient, readItems, readSingleton, rest, RestClient,
 } from '@directus/sdk';
 
 class ApiService {
@@ -17,7 +17,7 @@ class ApiService {
   }
 
   public async getGlobalData(): Promise<GlobalData> {
-    const data = await this.client.request(readItems('global_data')) as unknown;
+    const data = await this.client.request(readSingleton('global_data'));
 
     return data as GlobalData;
   }
@@ -47,13 +47,17 @@ class ApiService {
   }
 
   public async getPricings(): Promise<Pricing[]> {
-    const data = await this.client.request(readItems('pricing'));
+    const data = await this.client.request(readItems('pricing', {
+      fields: ['*', 'features.*'],
+    }));
 
     return data as Pricing[];
   }
 
   public async getQuestions(): Promise<QuestionSection[]> {
-    const data = await this.client.request(readItems('questions'));
+    const data = await this.client.request(readItems('questions_section', {
+      fields: ['*', 'questions.*'],
+    }));
 
     return data as QuestionSection[];
   }

@@ -1,35 +1,19 @@
-import { PreguntasSections } from '@/config/pages';
-import { PREGUNTAS } from '@/config/content/preguntas';
+import { apiService } from '@/services/api';
+import { sf } from '@/lib/utils';
 import Categoria from './categoria';
 
-const categories = [
-  {
-    category: 'Sobre el juego',
-    questions: PREGUNTAS.SOBRE_EL_JUEGO,
-    id: PreguntasSections.SOBRE_EL_JUEGO,
-  },
-  {
-    category: 'Sobre el servicio de hosting',
-    questions: PREGUNTAS.SOBRE_EL_HOSTING,
-    id: PreguntasSections.SOBRE_EL_HOSTING,
-  },
-  {
-    category: 'Recomendaciones en general',
-    questions: PREGUNTAS.GENERALES,
-    id: PreguntasSections.RECOMENDACIONES_EN_GENERAL,
-  },
-];
+export default async function Preguntas() {
+  const questionsCategories = await apiService.getQuestions();
 
-export default function Preguntas() {
   return (
     <>
       {
-        categories.map(({ category, questions, id }) => (
+        questionsCategories.map(({ questions, title }) => (
           <Categoria
-            key={category}
-            category={category}
+            key={title}
+            category={title}
             questions={questions}
-            id={id}
+            id={sf(title)}
           />
         ))
       }

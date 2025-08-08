@@ -16,7 +16,6 @@ export default function Particles() {
   const numOfParticules = width < 768 ? 70 : 130;
 
   useEffect(() => {
-    console.log({ showParticles, path });
     if (showParticles) return;
 
     const newParticles = Array.from({ length: numOfParticules }, (_, i) => ({
@@ -33,7 +32,6 @@ export default function Particles() {
     if (!showParticles) return () => {};
 
     const timeout = setTimeout(() => {
-      console.log('termina la animacion');
       setShowParticles(false);
       setParticles([]);
     }, 5000);

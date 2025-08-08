@@ -1,7 +1,8 @@
 import Section from '@/components/ui/section';
 import Title from '@/components/ui/title';
-import { VERSIONES_CONTENT } from '@/config/content/inicio';
 import { InicioSections } from '@/config/pages';
+import { apiService } from '@/services/api';
+import { VersionsFeature } from '@/types/directus';
 
 const javaBedrock = [
   {
@@ -35,13 +36,17 @@ function VersionsJavaBedrock() {
   );
 }
 
-function OtherVersions() {
+interface OtherVersionsProps {
+  versionsFeatures: VersionsFeature[];
+}
+
+function OtherVersions({ versionsFeatures }: OtherVersionsProps) {
   return (
     <div className="grid md:grid-cols-2 lg:grid-cols-3 w-full gap-6 md:gap-8">
       {
-        VERSIONES_CONTENT.versions.map(({ icon: Icon, content, title }) => (
+        versionsFeatures.map(({ content, title }) => (
           <div key={title} className="flex flex-col p-4 md:p-6 pb-10 gap-3 md:gap-4 rounded-xl border-2 border-[#24282F] bg-[#171B22] hover:border-[#616671] transition-colors relative">
-            <Icon className="size-11 md:size-16 md:mb-3" />
+            {/* <Icon className="size-11 md:size-16 md:mb-3" /> */}
             <h3 className="font-semibold text-xl">
               {title}
             </h3>
@@ -55,7 +60,9 @@ function OtherVersions() {
   );
 }
 
-export default function Versiones() {
+export default async function Versiones() {
+  const versionsFeatures = await apiService.getVersionsFeatures();
+
   return (
     <Section
       id={InicioSections.SOPORTAMOS_TODOS_LOS_MINECRAFTS}
@@ -71,7 +78,7 @@ export default function Versiones() {
       </Title>
       <div className="flex flex-col w-full gap-8">
         <VersionsJavaBedrock />
-        <OtherVersions />
+        <OtherVersions versionsFeatures={versionsFeatures} />
       </div>
     </Section>
   );

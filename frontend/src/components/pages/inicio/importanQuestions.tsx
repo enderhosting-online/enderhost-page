@@ -2,25 +2,26 @@ import Section from '@/components/ui/section';
 import Title from '@/components/ui/title';
 import { InicioSections } from '@/config/pages';
 import { apiService } from '@/services/api';
-import HostingFeaturesCards from './hostingFeaturesCards';
+import QuestionsList from './questionsList';
 
-export default async function HostingFeatures() {
-  const hostingFeatures = await apiService.getHostingFeatures();
+export default async function ImportantQuestions() {
+  const questions = await apiService.getQuestions();
 
   return (
     <Section
-      id={InicioSections.CREA_TU_SERVIDOR}
+      id={InicioSections.PREGUNTAS_FRECUENTES}
       className="flex flex-col gap-14 my-32"
     >
       <Title className="flex flex-col">
         <span>
-          Características que
+          Preguntas y respuestas
         </span>
         <span>
-          hacen la diferencia
+          frecuentes
         </span>
       </Title>
-      <HostingFeaturesCards hostingFeatures={hostingFeatures} />
+
+      <QuestionsList questions={questions} />
     </Section>
   );
 }
