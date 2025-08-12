@@ -1,5 +1,6 @@
 'use client';
 
+import { useDevice } from '@/components/providers/DeviceProvider';
 import { extractImageUrl } from '@/lib/directus';
 import { ExtendDescriptionFeature } from '@/types/directus';
 import { motion } from 'motion/react';
@@ -10,6 +11,8 @@ interface ExtendDescriptionSectionsProps {
 
 export default function ExtendDescriptionSections({ extendDescription }
 : ExtendDescriptionSectionsProps) {
+  const { isMobile } = useDevice();
+
   return (
     <div className="flex flex-col gap-24 w-full">
       {
@@ -19,7 +22,7 @@ export default function ExtendDescriptionSections({ extendDescription }
             className="grid md:grid-cols-2 gap-10 w-full items-center"
             whileInView={{ opacity: 1 }}
             initial={{ opacity: 0 }}
-            viewport={{ amount: 0.70, once: true }}
+            viewport={{ amount: isMobile ? 0.30 : 0.70, once: true }}
           >
             <div className="flex flex-col gap-6 md:gap-8">
               <h3 className="font-black uppercase text-2xl md:text-3xl">

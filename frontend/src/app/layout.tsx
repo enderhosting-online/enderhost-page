@@ -9,6 +9,7 @@ import { GoogleTagManager } from '@next/third-parties/google';
 import Particles from '@/components/layout/particles/particles';
 
 import { apiService } from '@/services/api';
+import { DeviceProvider } from '@/components/providers/DeviceProvider';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -40,13 +41,15 @@ export default function RootLayout({
         className={`${inter.variable} font-sans antialiased flex flex-col items-center overflow-x-hidden`}
       >
         <ProgressBarProvider>
-          <Gradient />
-          <Particles />
-          <Header />
-          <main className="flex flex-col items-center w-full overflow-x-hidden">
-            {children}
-          </main>
-          <Footer />
+          <DeviceProvider>
+            <Gradient />
+            <Particles />
+            <Header />
+            <main className="flex flex-col items-center w-full overflow-x-hidden">
+              {children}
+            </main>
+            <Footer />
+          </DeviceProvider>
         </ProgressBarProvider>
       </body>
     </html>

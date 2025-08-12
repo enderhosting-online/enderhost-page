@@ -29,13 +29,17 @@ class ApiService {
   }
 
   public async getHostingFeatures(): Promise<HostingFeature[]> {
-    const data = await this.client.request(readItems('hosting_features'));
+    const data = await this.client.request(readItems('hosting_features', {
+      fields: ['*', 'icon.name'],
+    }));
 
     return data as HostingFeature[];
   }
 
   public async getVersionsFeatures(): Promise<VersionsFeature[]> {
-    const data = await this.client.request(readItems('versions_features'));
+    const data = await this.client.request(readItems('versions_features', {
+      fields: ['*', 'icon.name'],
+    }));
 
     return data as VersionsFeature[];
   }
@@ -48,7 +52,7 @@ class ApiService {
 
   public async getPricings(): Promise<Pricing[]> {
     const data = await this.client.request(readItems('pricing', {
-      fields: ['*', 'features.*'],
+      fields: ['*', 'features.pricing_features_id.feature', 'features.pricing_features_id.icon.name'],
     }));
 
     return data as Pricing[];

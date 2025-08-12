@@ -2,6 +2,7 @@
 
 import { HostingFeature } from '@/types/directus';
 import { motion } from 'motion/react';
+import { IconMapper } from '@/lib/icons';
 
 interface HostingFeaturesCardsProps {
   hostingFeatures: HostingFeature[];
@@ -20,7 +21,7 @@ export default function HostingFeaturesCards({ hostingFeatures }: HostingFeature
             transition={{ bounce: 0.3, type: 'spring', duration: 0.6 }}
             viewport={{ once: true, amount: 0.2 }}
           >
-            {/* <feature.icon className="size-16 mb-3" /> */}
+            <IconMapper className="size-16 mb-3" name={feature.icon.name} />
             <h3 className="text-xl font-semibold">{feature.title}</h3>
             <p>{feature.content}</p>
           </motion.div>

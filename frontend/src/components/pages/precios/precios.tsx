@@ -1,13 +1,15 @@
-'use client';
-
 import { Button } from '@/components/ui/button';
 import Cube3d from '@/components/ui/cube3d';
 import Section from '@/components/ui/section';
 import Title from '@/components/ui/title';
-import { PRECIOS } from '@/config/content/precios';
 import { PreciosSections } from '@/config/pages';
+import { extractImageUrl } from '@/lib/directus';
+import { IconMapper } from '@/lib/icons';
+import { apiService } from '@/services/api';
 
-export default function Precios() {
+export default async function Precios() {
+  const prices = await apiService.getPricings();
+
   return (
     <Section
       id={PreciosSections.ELIGUE_EL_MEJOR}
@@ -28,8 +30,8 @@ export default function Precios() {
         <div className="group/Diamante absolute top-0 left-0 w-full h-full glassmorphism-diamond opacity-0" />
         <div className="group/Netherita absolute top-0 left-0 w-full h-full glassmorphism-netherite opacity-0" />
         {
-          PRECIOS.map(({
-            description, features, name, price, texture,
+          prices.map(({
+            description, features, name, price, block,
           }) => (
             <div
               key={name}
@@ -39,9 +41,7 @@ export default function Precios() {
                 <h3 className="text-center font-black uppercase text-4xl">
                   {name}
                 </h3>
-                <p className="text-center text-foreground/70 h-20">
-                  {description}
-                </p>
+                <div className="text-center text-foreground/70 h-20" dangerouslySetInnerHTML={{ __html: description }} />
                 <div className="flex justify-center my-14">
                   <span className="text-4xl">
                     S/
@@ -56,11 +56,11 @@ export default function Precios() {
 
                 <div className="flex flex-col items-start justify-start gap-5 w-fit">
                   {
-                  features.map(({ icon: Icon, name: featureName }) => (
-                    <div key={featureName} className="flex gap-3 items-center">
-                      <Icon className="size-7 stroke-2 min-w-min" />
+                  features.map(({ pricing_features_id: feature }) => (
+                    <div key={feature.feature} className="flex gap-3 items-center">
+                      <IconMapper className="size-7 stroke-2 min-w-min" name={feature.icon.name} />
                       <span>
-                        {featureName}
+                        {feature.feature}
                       </span>
                     </div>
                   ))
@@ -68,7 +68,7 @@ export default function Precios() {
                 </div>
               </div>
               <div className="grid gap-10">
-                <Cube3d texture={texture} />
+                <Cube3d texture={extractImageUrl(block)} />
                 <Button size="lg" className="w-full mt-6">
                   Comprar
                 </Button>

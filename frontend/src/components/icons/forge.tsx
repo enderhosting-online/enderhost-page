@@ -1,4 +1,4 @@
-export default function ForgeIcon({ className }: { className ?:string }) {
+export default function IconForge({ className }: { className ?:string }) {
   return (
     <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" id="Curseforge--Streamline-Simple-Icons" height={24} width={24} className={className}>
       <desc>Curseforge Streamline Icon: https://streamlinehq.com</desc>

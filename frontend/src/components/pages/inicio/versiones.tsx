@@ -1,6 +1,7 @@
 import Section from '@/components/ui/section';
 import Title from '@/components/ui/title';
 import { InicioSections } from '@/config/pages';
+import { IconMapper } from '@/lib/icons';
 import { apiService } from '@/services/api';
 import { VersionsFeature } from '@/types/directus';
 
@@ -44,9 +45,9 @@ function OtherVersions({ versionsFeatures }: OtherVersionsProps) {
   return (
     <div className="grid md:grid-cols-2 lg:grid-cols-3 w-full gap-6 md:gap-8">
       {
-        versionsFeatures.map(({ content, title }) => (
+        versionsFeatures.map(({ content, title, icon }) => (
           <div key={title} className="flex flex-col p-4 md:p-6 pb-10 gap-3 md:gap-4 rounded-xl border-2 border-[#24282F] bg-[#171B22] hover:border-[#616671] transition-colors relative">
-            {/* <Icon className="size-11 md:size-16 md:mb-3" /> */}
+            <IconMapper className="size-11 md:size-16 mb-3" name={icon.name} />
             <h3 className="font-semibold text-xl">
               {title}
             </h3>

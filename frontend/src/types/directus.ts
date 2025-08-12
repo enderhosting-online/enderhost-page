@@ -1,5 +1,34 @@
 export type SingleItem = Record<string, any>;
 
+export enum IconName {
+  Spigot = 'Spigot',
+  Forge = 'Forge',
+  Automation = 'Automation',
+  BoltFilled = 'BoltFilled',
+  Bulb = 'Bulb',
+  Map = 'Map',
+  Shield = 'Shield',
+  Table = 'Table',
+  TableFilled = 'TableFilled',
+  UserCog = 'UserCog',
+  Users = 'Users',
+  World = 'World',
+  HardDrive = 'HardDrive',
+  HardDriveDownload = 'HardDriveDownload',
+  MemoryStick = 'MemoryStick',
+  Smartphone = 'Smartphone',
+  UsersRound = 'UsersRound',
+  AppWindow = 'AppWindow',
+  Signal = 'Signal',
+  PackageCheck = 'PackageCheck',
+  MonitorCheck = 'MonitorCheck',
+  History = 'History',
+}
+
+export interface Icon {
+  name: IconName;
+}
+
 export interface GlobalData {
   title: string;
   short_title: string;
@@ -15,13 +44,13 @@ export interface HostingFeature {
   status: string;
   title: string;
   content: string;
-  icon: string;
+  icon: Icon;
 }
 
 export interface VersionsFeature {
   title: string;
   content: string;
-  icon: string;
+  icon: Icon;
 }
 
 export interface ExtendDescriptionFeature {
@@ -32,7 +61,7 @@ export interface ExtendDescriptionFeature {
 
 export interface PricingFeature {
   feature: string;
-  icon: string;
+  icon: Icon;
 }
 
 export interface Pricing {
@@ -40,7 +69,9 @@ export interface Pricing {
   description: string;
   price: number;
   block: string;
-  features: PricingFeature[];
+  features: {
+    pricing_features_id: PricingFeature
+  }[];
 }
 
 export interface Question {
