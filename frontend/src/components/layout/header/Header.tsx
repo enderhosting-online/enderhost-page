@@ -25,7 +25,7 @@ export default async function Header() {
           </span>
         </Link>
         <HeaderDesktop />
-        <HeaderMobile />
+        <HeaderMobile globalData={globalData} />
       </header>
     </div>
   );

@@ -1,8 +1,12 @@
 import Link from 'next/link';
 import pagesConfig from '@/config/pages';
+import { apiService } from '@/services/api';
+import { extractImageUrl } from '@/lib/directus';
 import ColumnLinks from './ColumnLinks';
 
-export default function FooterLinks() {
+export default async function FooterLinks() {
+  const globalData = await apiService.getGlobalData();
+
   return (
     <div className="flex flex-wrap gap-7">
       {
@@ -13,10 +17,10 @@ export default function FooterLinks() {
           />
         ))
       }
-      <Link href="https://acm.org" className="flex justify-center basis-36 max-h-60 grow self-start">
+      <Link href="/" className="flex justify-center basis-36 max-h-60 grow self-start">
         <img
-          src="https://ynoa-uploader.ynoacamino.site/uploads/1743369112_Component%201%20%285%29.png"
-          alt="Yn Hosting Logo"
+          src={extractImageUrl(globalData.logo)}
+          alt={globalData.title}
           className="w-full h-full"
         />
       </Link>

@@ -10,11 +10,12 @@ import {
   SheetTrigger,
 } from '@/components/ui/sheet';
 import pagesConfig from '@/config/pages';
-// import { cn } from '@/lib/utils';
 import { Menu } from 'lucide-react';
 import { useState, ReactNode } from 'react';
 import { useRouter } from 'next/navigation';
 import { cn } from '@/lib/utils';
+import { extractImageUrl } from '@/lib/directus';
+import { GlobalData } from '@/types/directus';
 
 function LinkMobile(
   props: React.ComponentProps<'a'> & { children: ReactNode; setSheetOpen:
@@ -40,7 +41,11 @@ function LinkMobile(
   );
 }
 
-export default function HeaderMobile() {
+interface HeaderMobileProps {
+  globalData: GlobalData;
+}
+
+export default function HeaderMobile({ globalData }: HeaderMobileProps) {
   const [sheetOpen, setSheetOpen] = useState(false);
 
   return (
@@ -55,13 +60,8 @@ export default function HeaderMobile() {
           <SheetHeader>
             <div className="flex flex-col gap-4 mb-5">
               <SheetTitle className="flex flex-col text-3xl font-bold">
-                <span>
-                  Capitulo
-                </span>
-                <span className="flex flex-col lg:flex-row justify-start items-start lg:items-center gap-x-3 gap-y-2">
-                  <span>
-                    Estudiantil
-                  </span>
+                <span className="flex items-center justify-center text-2xl font-extrabold gap-2">
+                  <img src={extractImageUrl(globalData.logo)} alt={globalData.title} className="w-40" />
                 </span>
               </SheetTitle>
             </div>
