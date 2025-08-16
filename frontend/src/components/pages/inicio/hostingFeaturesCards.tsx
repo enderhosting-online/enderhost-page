@@ -23,10 +23,11 @@ export default function HostingFeaturesCards({ hostingFeatures }: HostingFeature
             whileInView={{ opacity: 1 }}
             viewport={{
               once: true,
-              amount: isMobile ? 0.6 : 0.3,
+              amount: isMobile ? 0.2 : 0.3,
             }}
             transition={{
               delay: isMobile ? 0 : i * 0.06,
+              // duration: 0.4,
             }}
           >
             <IconMapper className="size-16 mb-3" name={feature.icon.name} />

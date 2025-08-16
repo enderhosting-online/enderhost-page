@@ -22,7 +22,7 @@ export default function ExtendDescriptionSections({ extendDescription }
             className="grid md:grid-cols-2 gap-10 w-full items-center"
             whileInView={{ opacity: 1 }}
             initial={{ opacity: 0 }}
-            viewport={{ amount: isMobile ? 0.30 : 0.70, once: true }}
+            viewport={{ amount: isMobile ? 0.24 : 0.60, once: true }}
           >
             <div className="flex flex-col gap-6 md:gap-8">
               <h3 className="font-black uppercase text-2xl md:text-3xl">
