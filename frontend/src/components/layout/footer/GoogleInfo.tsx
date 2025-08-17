@@ -1,11 +1,10 @@
 import Link from 'next/link';
 
 const googleInfo = [
-  { name: 'Acerca de Google', url: 'https://about.google' },
-  { name: 'Productos de Google', url: 'https://about.google/products' },
-  { name: 'Privacidad', url: 'https://policies.google.com/privacy' },
+  { name: `${new Date().getFullYear()} Ender Hosting`, url: '/' },
+  { name: 'Política de Privacidad', url: '/politica-de-privacidad' },
   { name: 'Términos', url: 'https://policies.google.com/terms' },
-  { name: 'Ayuda', url: 'https://support.google.com/?hl=es' },
+  { name: 'Ayuda', url: '/preguntas' },
 ];
 
 export default function GoogleInfo() {

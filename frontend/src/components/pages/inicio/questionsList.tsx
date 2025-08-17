@@ -27,7 +27,6 @@ export default function QuestionsList({ questions }: QuestionsListProps) {
             viewport={{ amount: 1, once: true }}
             className="border-2 border-[#24282F] rounded-xl overflow-hidden bg-[#171B22]"
             whileHover={{ borderColor: '#616671' }}
-            // transition={{ delay: i * 0.04 }}
           >
             <Link
               href={`/preguntas#${sf(title)}`}

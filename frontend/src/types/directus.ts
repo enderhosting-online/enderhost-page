@@ -36,6 +36,10 @@ export interface GlobalData {
   logo: string;
 }
 
+export interface PrivacyPolicy {
+  content: string;
+}
+
 export interface HeroFeature {
   label: string;
 }

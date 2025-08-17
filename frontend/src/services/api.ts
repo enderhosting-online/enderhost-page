@@ -3,6 +3,7 @@ import {
   ExtendDescriptionFeature,
   GlobalData, HeroFeature,
   HostingFeature, Pricing,
+  PrivacyPolicy,
   QuestionSection, VersionsFeature,
 } from '@/types/directus';
 import {
@@ -64,6 +65,12 @@ class ApiService {
     }));
 
     return data as QuestionSection[];
+  }
+
+  public async getPrivacyPolicy(): Promise<PrivacyPolicy> {
+    const data = await this.client.request(readSingleton('privacy_policy'));
+
+    return data as PrivacyPolicy;
   }
 }
 

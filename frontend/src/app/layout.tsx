@@ -7,6 +7,7 @@ import Gradient from '@/components/layout/global/gradient';
 import ProgressBarProvider from '@/components/providers/ProgressBarProvider';
 import { GoogleTagManager } from '@next/third-parties/google';
 import Particles from '@/components/layout/particles/particles';
+import { unstable_ViewTransition as ViewTransition } from 'react';
 
 import { apiService } from '@/services/api';
 import { DeviceProvider } from '@/components/providers/DeviceProvider';
@@ -45,9 +46,11 @@ export default function RootLayout({
             <Gradient />
             <Particles />
             <Header />
-            <main className="flex flex-col items-center w-full overflow-x-hidden">
-              {children}
-            </main>
+            <ViewTransition>
+              <main className="flex flex-col items-center w-full overflow-x-hidden">
+                {children}
+              </main>
+            </ViewTransition>
             <Footer />
           </DeviceProvider>
         </ProgressBarProvider>

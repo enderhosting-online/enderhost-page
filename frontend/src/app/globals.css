@@ -3,6 +3,7 @@
 
 @custom-variant dark (&:is(.dark *));
 @plugin 'tailwind-scrollbar';
+@plugin "@tailwindcss/typography";
 
 .a {
   position: unset;
@@ -148,4 +149,28 @@ button[id] {
 
 html {
   scroll-behavior: smooth;
+}
+
+::view-transition-old(main) {
+  animation: fade-out 500ms ease-in-out both;
+}
+::view-transition-new(main) {
+  animation: fade-in 500ms ease-in-out both;
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
