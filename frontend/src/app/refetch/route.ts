@@ -2,7 +2,7 @@ import pageConfig from '@/config/pages';
 import { AUTORIZATION_HEADER } from '@/config/variables';
 import { revalidatePath } from 'next/cache';
 
-export default async function GET(request: Request) {
+export async function GET(request: Request): Promise<Response> {
   const { headers } = request;
 
   const autorizationHeader = headers.get('Authorization');
