@@ -23,8 +23,8 @@ const messagesBoubleSupport = [
   'Disfruta la prueba 🙌🙌',
 ];
 
-const messagesBoubleSupportLength = messagesBoubleSupport
-  .reduce((acc, curr) => acc + curr.length, 0);
+// const messagesBoubleSupportLength = messagesBoubleSupport
+//   .reduce((acc, curr) => acc + curr.length, 0);
 
 const getDelayForIndex = (
   delay: number,

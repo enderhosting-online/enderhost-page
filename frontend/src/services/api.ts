@@ -14,7 +14,9 @@ class ApiService {
   private client!: DirectusClient<any> & RestClient<any>;
 
   constructor(private apiUrl: string) {
-    this.client = createDirectus(BACKEND_URL).with(rest());
+    this.client = createDirectus(apiUrl).with(rest({
+      onRequest: (options) => ({ ...options, next: { revalidate: 60 * 60 * 24 } }),
+    }));
   }
 
   public async getGlobalData(): Promise<GlobalData> {
