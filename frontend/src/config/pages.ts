@@ -12,7 +12,9 @@ export enum ConocenosSections {
 
 export enum PreciosSections {
   ELIGUE_EL_MEJOR = 'precios-eligue-el-mejor',
-  HAZ_PRUEBA_GRATIS = 'precios-haz-prueba-gratis',
+  PLAN_HIERRO = 'precios-plan-hierro',
+  PLAN_DIAMANTE = 'precios-plan-diamante',
+  PLAN_NETHERITA = 'precios-plan-netherita',
 }
 
 export enum PreguntasSections {
@@ -73,8 +75,16 @@ const pageConfig: PageConfigInterface = {
           id: PreciosSections.ELIGUE_EL_MEJOR,
         },
         {
-          name: 'Haz una prueba gratis',
-          id: PreciosSections.HAZ_PRUEBA_GRATIS,
+          name: 'Plan Hierro',
+          id: PreciosSections.PLAN_HIERRO,
+        },
+        {
+          name: 'Plan Diamante',
+          id: PreciosSections.PLAN_DIAMANTE,
+        },
+        {
+          name: 'Plan Netherita',
+          id: PreciosSections.PLAN_NETHERITA,
         },
       ],
     },
@@ -95,6 +105,10 @@ const pageConfig: PageConfigInterface = {
           id: PreguntasSections.RECOMENDACIONES_EN_GENERAL,
         },
       ],
+    },
+    {
+      name: 'Prueba gratuita',
+      path: '/prueba-gratuita',
     },
   ],
 };

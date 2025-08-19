@@ -10,12 +10,14 @@ export default async function FooterLinks() {
   return (
     <div className="flex flex-wrap gap-7">
       {
-        pagesConfig.pages.map((page) => (
-          <ColumnLinks
-            key={page.path}
-            {...page}
-          />
-        ))
+        pagesConfig.pages
+          .filter((page) => page.sections && page.sections.length > 2)
+          .map((page) => (
+            <ColumnLinks
+              key={page.path}
+              {...page}
+            />
+          ))
       }
       <Link href="/" className="flex justify-center basis-36 max-h-60 grow self-start">
         <img
