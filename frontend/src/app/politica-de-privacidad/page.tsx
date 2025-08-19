@@ -1,4 +1,10 @@
+import type { Metadata } from 'next';
 import { apiService } from '@/services/api';
+
+export const metadata: Metadata = {
+  title: 'Política de Privacidad | EnderHost',
+  description: 'Conoce nuestra política de privacidad y cómo protegemos tus datos personales. En EnderHost, tu privacidad es nuestra prioridad.',
+};
 
 export default async function PrivacyPolicy() {
   const privacyPolicy = await apiService.getPrivacyPolicy();

@@ -11,6 +11,7 @@ import { unstable_ViewTransition as ViewTransition } from 'react';
 
 import { apiService } from '@/services/api';
 import { DeviceProvider } from '@/components/providers/DeviceProvider';
+import { defaultMetadataConfig } from '@/config/metadata';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -22,6 +23,12 @@ export async function generateMetadata(): Promise<Metadata> {
     const globalMetadata = await apiService.getGlobalData();
 
     return {
+      ...defaultMetadataConfig,
+      openGraph: {
+        title: globalMetadata.title,
+        description: globalMetadata.description,
+        ...defaultMetadataConfig.openGraph,
+      },
       title: globalMetadata.title,
       description: globalMetadata.description,
     };
@@ -37,7 +44,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <GoogleAnalytics gaId="G-D2X23339MH" />
+      <GoogleAnalytics gaId="G-FYVWJD1CDR" />
       <body
         className={`${inter.variable} font-sans antialiased flex flex-col items-center overflow-x-hidden`}
       >
