@@ -5,6 +5,7 @@ import Title from '@/components/ui/title';
 import { PreciosSections } from '@/config/pages';
 import { extractImageUrl } from '@/lib/directus';
 import { IconMapper } from '@/lib/icons';
+import { cn } from '@/lib/utils';
 import { apiService } from '@/services/api';
 
 export default async function Precios() {
@@ -24,7 +25,7 @@ export default async function Precios() {
         </span>
       </Title>
       <div
-        className="glassmorphism grid  md:grid-cols-3 w-full rounded-lg gap-5 p-5 lg:gap-6 lg:p-6 relative overflow-hidden"
+        className=" grid  md:grid-cols-3 w-full rounded-lg gap-5 p-5 lg:gap-6 lg:p-6 relative overflow-hidden"
       >
         <div className="group/Hierro absolute top-0 left-0 w-full h-full glassmorphism-hiron opacity-0" />
         <div className="group/Diamante absolute top-0 left-0 w-full h-full glassmorphism-diamond opacity-0" />
@@ -35,8 +36,21 @@ export default async function Precios() {
           }) => (
             <div
               key={name}
-              className={`flex flex-col gap-16 bg-[#111928]/75 rounded-lg p-6 pb-6 backdrop-blur-lg justify-between py-12 items-center group-hover/${name}:opacity-100`}
+              className={cn('flex flex-col gap-16 bg-[#111928]/75 rounded-lg p-6 pb-6 backdrop-blur-lg justify-between py-12 items-center relative', {
+                'group-hover/Hierro:opacity-100': name === 'Hierro',
+                'group-hover/Diamante:opacity-100': name === 'Diamante',
+                'group-hover/Netherita:opacity-100': name === 'Netherita',
+              })}
             >
+              <div
+                className="absolute top-0 right-0 w-34 h-22 bg-red-600/90 flex items-start justify-center text-white font-bold rounded-tr-lg"
+                style={{ clipPath: 'polygon(100% 0, 0 0, 100% 100%)' }}
+              >
+                <div className="text-end absolute top-1 right-2">
+                  <p className="text-2xl font-black">10%</p>
+                  <p className="text-sm">DTO.</p>
+                </div>
+              </div>
               <div className="flex flex-col gap-4">
                 <h3 className="text-center font-black uppercase text-4xl">
                   {name}
