@@ -25,11 +25,9 @@ export default async function Precios() {
         </span>
       </Title>
       <div
-        className=" grid  md:grid-cols-3 w-full rounded-lg gap-5 p-5 lg:gap-6 lg:p-6 relative overflow-hidden"
+        className=" grid glassmorphism md:grid-cols-3 w-full rounded-lg gap-5 p-5 lg:gap-6 lg:p-6 relative overflow-hidden"
       >
-        <div className="group/Hierro absolute top-0 left-0 w-full h-full glassmorphism-hiron opacity-0" />
-        <div className="group/Diamante absolute top-0 left-0 w-full h-full glassmorphism-diamond opacity-0" />
-        <div className="group/Netherita absolute top-0 left-0 w-full h-full glassmorphism-netherite opacity-0" />
+        <div className="absolute top-0 left-0 w-full h-full glassmorphism-hiron opacity-0" />
         {
           prices.map(({
             description, features, name, price, block,

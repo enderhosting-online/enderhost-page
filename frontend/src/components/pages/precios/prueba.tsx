@@ -75,7 +75,10 @@ export default function Prueba() {
         </span>
       </Title>
       <div className="flex flex-col gap-24 md:gap-28">
-        <Step index={1} title="Escribenos diciendo: “Me gustaria hacer la prueba gratuita”">
+        <Step
+          index={1}
+          title="Escribenos diciendo: “Me gustaria hacer la prueba gratuita”"
+        >
           <div className="flex justify-end items-start min-h-52 md:min-h-46">
             <div className="relative flex flex-col">
               <motion.div
@@ -83,7 +86,7 @@ export default function Prueba() {
                 animate={{ scaleX: 1, scaleY: 1 }}
                 style={{ transformOrigin: 'top right' }}
                 transition={{ delay: 0.5 }}
-                className="md:mr-20 bg-[#2E5B4B] py-5 px-4 md:px-7 md:pb-8 relative flex flex-col gap-1 rounded-lg text-lg md:text-2xl min-w-md min-h-24 rounded-tr-none"
+                className="mr-4 md:mr-20 bg-[#2E5B4B] py-5 px-4 md:px-7 md:pb-8 relative flex flex-col gap-1 rounded-lg text-lg md:text-2xl min-w-xs md:min-w-md min-h-24 rounded-tr-none"
               >
                 {
                 messagesBoubleUser.map((message, i) => (
@@ -104,15 +107,18 @@ export default function Prueba() {
                   1:49
                 </motion.span>
               </motion.div>
-              <div className="w-0 h-0
-                          border-b-[40px] border-b-transparent
-                          border-l-[40px] border-l-[#2E5B4B]
-                          border-t-0 border-r-0 top-0 absolute right-12"
+              <div className="w-0 h-0 border-b-[30px] border-l-[30px]
+                          md:border-b-[40px] border-b-transparent
+                          md:border-l-[40px] border-l-[#2E5B4B]
+                          border-t-0 border-r-0 top-0 absolute -right-2 md:right-12"
               />
             </div>
           </div>
         </Step>
-        <Step index={2} title="Espera a que te enviemos un mensaje de confirmacion junto con tu usuario de prueba.">
+        <Step
+          index={2}
+          title="Espera a que te enviemos un mensaje de confirmacion junto con tu usuario de prueba."
+        >
           <div className="flex justify-start items-start min-h-58">
             <div className="relative flex flex-col">
               <motion.div
@@ -120,7 +126,7 @@ export default function Prueba() {
                 animate={{ scaleX: 1, scaleY: 1 }}
                 style={{ transformOrigin: 'top left' }}
                 transition={{ delay: 0.5 + (messagesBoubleUserLength * 50) / 1000 + 0.2 }}
-                className="md:ml-20 bg-[#232C33] py-5 px-7 pb-8 relative flex flex-col gap-1 rounded-lg text-lg md:text-2xl md:min-w-md min-h-24"
+                className="ml-4 md:ml-20 bg-[#232C33] py-5 px-7 pb-8 relative flex flex-col gap-1 rounded-lg text-lg md:text-2xl min-w-xs md:min-w-md min-h-24"
               >
                 {
                 messagesBoubleSupport.map((message, i) => (
@@ -147,10 +153,10 @@ export default function Prueba() {
                   1:52
                 </motion.span>
               </motion.div>
-              <div className="w-0 h-0
-                          border-b-[40px] border-b-transparent
-                          border-r-[40px] border-r-[#232C33]
-                          border-t-0 border-l-0 top-0 absolute left-12"
+              <div className="w-0 h-0 border-b-[30px] border-r-[30px]
+                          md:border-b-[40px] border-b-transparent
+                          md:border-r-[40px] border-r-[#232C33]
+                          border-t-0 border-l-0 top-0 absolute -left-2 md:left-12"
               />
             </div>
           </div>
