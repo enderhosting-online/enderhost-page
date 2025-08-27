@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@appnest/masonry-layout':
+        specifier: ^2.2.3
+        version: 2.2.3
       '@bprogress/next':
         specifier: ^3.2.12
         version: 3.2.12(next@15.4.6(@babel/core@7.26.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -134,6 +137,9 @@ packages:
   '@antfu/ni@0.21.12':
     resolution: {integrity: sha512-2aDL3WUv8hMJb2L3r/PIQWsTLyq7RQr3v9xD16fiz6O8ys1xEyLhhTOv8gxtZvJiTzjTF5pHoArvRdesGL1DMQ==}
     hasBin: true
+
+  '@appnest/masonry-layout@2.2.3':
+    resolution: {integrity: sha512-q4q48iygVyaFaaogu5xeYNHR5jj4yZMB4zC1JmfOggz7DPCp/QIJGbnLctf3y2maNtGz4PiLXrQRQlmx5hO57A==}
 
   '@axiomhq/js@1.0.0-rc.3':
     resolution: {integrity: sha512-Zm10TczcMLounWqC42nMkXQ7XKLqjzLrd5ia022oBKDUZqAFVg2y9d1quQVNV4FlXyg9MKDdfMjpKQRmzEGaog==}
@@ -4140,6 +4146,8 @@ snapshots:
       '@jridgewell/trace-mapping': 0.3.30
 
   '@antfu/ni@0.21.12': {}
+
+  '@appnest/masonry-layout@2.2.3': {}
 
   '@axiomhq/js@1.0.0-rc.3':
     dependencies:

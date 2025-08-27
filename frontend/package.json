@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@appnest/masonry-layout": "^2.2.3",
     "@bprogress/next": "^3.2.12",
     "@directus/sdk": "^20.0.1",
     "@million/lint": "^1.0.14",
