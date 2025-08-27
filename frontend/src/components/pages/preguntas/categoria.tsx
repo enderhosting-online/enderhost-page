@@ -1,19 +1,23 @@
 'use client';
 
 import Section from '@/components/ui/section';
+import { Skeleton } from '@/components/ui/skeleton';
 import Title from '@/components/ui/title';
 import { sf } from '@/lib/utils';
 import { Question } from '@/types/directus';
 
 import { motion } from 'motion/react';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function Categoria(
   { category, questions, id }:
   { category: string, questions: Question[], id: string },
 ) {
+  const [masontyLoading, setMasoryLoading] = useState(true);
+
   useEffect(() => {
-    import('@appnest/masonry-layout');
+    import('@appnest/masonry-layout')
+      .then(() => setMasoryLoading(false));
   }, []);
 
   return (
@@ -24,8 +28,18 @@ export default function Categoria(
       <Title className="max-w-lg">
         {category}
       </Title>
-      <masonry-layout maxcolwidth="700" className="md:gap-2">
-        {
+
+      {
+        masontyLoading ? (
+          <div className="grid md:grid-cols-2 gap-6 md:gap-8 w-full">
+            <Skeleton className="w-full aspect-video" />
+            <Skeleton className="w-full aspect-video" />
+            <Skeleton className="w-full aspect-video" />
+            <Skeleton className="w-full aspect-video" />
+          </div>
+        ) : (
+          <masonry-layout maxcolwidth="700" className="md:gap-2">
+            {
           questions.map(({ answer, title }) => (
             <motion.div
               key={title}
@@ -40,7 +54,9 @@ export default function Categoria(
             </motion.div>
           ))
         }
-      </masonry-layout>
+          </masonry-layout>
+        )
+      }
     </Section>
   );
 }
