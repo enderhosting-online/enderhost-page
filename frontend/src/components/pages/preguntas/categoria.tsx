@@ -1,25 +1,19 @@
 'use client';
 
 import Section from '@/components/ui/section';
-import { Skeleton } from '@/components/ui/skeleton';
 import Title from '@/components/ui/title';
 import { sf } from '@/lib/utils';
 import { Question } from '@/types/directus';
+import Masonry from 'react-smart-masonry';
 
 import { motion } from 'motion/react';
-import { useEffect, useState } from 'react';
+
+const breakpoints = { mobile: 0, desktop: 768 };
 
 export default function Categoria(
   { category, questions, id }:
   { category: string, questions: Question[], id: string },
 ) {
-  const [masontyLoading, setMasoryLoading] = useState(true);
-
-  useEffect(() => {
-    import('@appnest/masonry-layout')
-      .then(() => setMasoryLoading(false));
-  }, []);
-
   return (
     <Section
       className="flex flex-col gap-16 my-20"
@@ -29,21 +23,17 @@ export default function Categoria(
         {category}
       </Title>
 
-      {
-        masontyLoading ? (
-          <div className="grid md:grid-cols-2 gap-6 md:gap-8 w-full">
-            <Skeleton className="w-full aspect-video" />
-            <Skeleton className="w-full aspect-video" />
-            <Skeleton className="w-full aspect-video" />
-            <Skeleton className="w-full aspect-video" />
-          </div>
-        ) : (
-          <masonry-layout maxcolwidth="700" className="md:gap-2">
-            {
+      <Masonry
+        columns={{ mobile: 1, desktop: 2 }}
+        gap={{ mobile: 20, desktop: 24 }}
+        breakpoints={breakpoints}
+        autoArrange
+      >
+        {
           questions.map(({ answer, title }) => (
             <motion.div
               key={title}
-              className="p-6 gap-8 rounded-xl border-2 border-[#24282F] bg-[#171B22] text-xl flex flex-col max-h-max mb-6 md:mb-8 w-full"
+              className="p-6 gap-8 rounded-xl border-2 border-[#24282F] bg-[#171B22] text-xl flex flex-col max-h-max w-full"
               whileHover={{ borderColor: '#616671' }}
               id={sf(title)}
             >
@@ -54,9 +44,7 @@ export default function Categoria(
             </motion.div>
           ))
         }
-          </masonry-layout>
-        )
-      }
+      </Masonry>
     </Section>
   );
 }

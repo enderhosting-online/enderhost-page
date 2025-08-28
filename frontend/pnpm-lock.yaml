@@ -8,9 +8,6 @@ importers:
 
   .:
     dependencies:
-      '@appnest/masonry-layout':
-        specifier: ^2.2.3
-        version: 2.2.3
       '@bprogress/next':
         specifier: ^3.2.12
         version: 3.2.12(next@15.4.6(@babel/core@7.26.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -65,6 +62,9 @@ importers:
       react-dom:
         specifier: ^19.0.0
         version: 19.0.0(react@19.0.0)
+      react-smart-masonry:
+        specifier: ^2.0.2
+        version: 2.0.2(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       react-use:
         specifier: ^17.6.0
         version: 17.6.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -137,9 +137,6 @@ packages:
   '@antfu/ni@0.21.12':
     resolution: {integrity: sha512-2aDL3WUv8hMJb2L3r/PIQWsTLyq7RQr3v9xD16fiz6O8ys1xEyLhhTOv8gxtZvJiTzjTF5pHoArvRdesGL1DMQ==}
     hasBin: true
-
-  '@appnest/masonry-layout@2.2.3':
-    resolution: {integrity: sha512-q4q48iygVyaFaaogu5xeYNHR5jj4yZMB4zC1JmfOggz7DPCp/QIJGbnLctf3y2maNtGz4PiLXrQRQlmx5hO57A==}
 
   '@axiomhq/js@1.0.0-rc.3':
     resolution: {integrity: sha512-Zm10TczcMLounWqC42nMkXQ7XKLqjzLrd5ia022oBKDUZqAFVg2y9d1quQVNV4FlXyg9MKDdfMjpKQRmzEGaog==}
@@ -3452,6 +3449,12 @@ packages:
     resolution: {integrity: sha512-reHgQnASWVXwHe0Ibk/EbsEPZhKrmNRf8EUNDmjMi1lzXec+Cj9litKxD0TG2ghAwg5V4sT0wzhiOgZSIefeVg==}
     hasBin: true
 
+  react-smart-masonry@2.0.2:
+    resolution: {integrity: sha512-Dxw9+zYZ4mZf1snLErMu/66Q6/KyWcQJwDMYnq7PK9RzLasgfd0t1Ra4VeRTQfvxT4ize2AqP4iZ9NxE0B9ynw==}
+    peerDependencies:
+      react: '>=16.8'
+      react-dom: '>=16.8'
+
   react-style-singleton@2.2.3:
     resolution: {integrity: sha512-b6jSvxvVnyptAiLjbkWLE/lOnR4lfTtDAl+eUC7RZy+QQWc6wRzIV2CE6xBuMmDxc2qIihtDCZD5NPOFl7fRBQ==}
     engines: {node: '>=10'}
@@ -4146,8 +4149,6 @@ snapshots:
       '@jridgewell/trace-mapping': 0.3.30
 
   '@antfu/ni@0.21.12': {}
-
-  '@appnest/masonry-layout@2.2.3': {}
 
   '@axiomhq/js@1.0.0-rc.3':
     dependencies:
@@ -7995,6 +7996,11 @@ snapshots:
       kleur: 4.1.5
       mri: 1.2.0
       playwright: 1.54.2
+
+  react-smart-masonry@2.0.2(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
+    dependencies:
+      react: 19.0.0
+      react-dom: 19.0.0(react@19.0.0)
 
   react-style-singleton@2.2.3(@types/react@19.0.12)(react@19.0.0):
     dependencies:
