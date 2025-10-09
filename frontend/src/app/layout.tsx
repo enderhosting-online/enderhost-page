@@ -12,6 +12,7 @@ import { unstable_ViewTransition as ViewTransition } from 'react';
 import { apiService } from '@/services/api';
 import { DeviceProvider } from '@/components/providers/DeviceProvider';
 import { defaultMetadataConfig } from '@/config/metadata';
+import WhatsappButton from '@/components/layout/WhatsappButton';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -52,6 +53,7 @@ export default function RootLayout({
           <DeviceProvider>
             <Gradient />
             <Particles />
+            <WhatsappButton />
             <Header />
             <ViewTransition>
               <main className="flex flex-col items-center w-full overflow-x-hidden">

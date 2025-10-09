@@ -16,7 +16,7 @@ export default function Particles() {
   useEffect(() => {
     if (showParticles) return;
 
-    const numOfParticules = isMobile ? 55 : 130;
+    const numOfParticules = isMobile ? 55 : 150;
 
     const newParticles = Array.from({ length: numOfParticules }, (_, i) => ({
       id: i,

@@ -7,11 +7,11 @@ import { VersionsFeature } from '@/types/directus';
 
 const javaBedrock = [
   {
-    image: 'https://ynoa-uploader.ynoacamino.site/uploads/1743101369_image%2013.png',
+    image: 'https://ynoa-uploader.ynoacamino.me/uploads/1743101369_image%2013.png',
     title: 'Minecraft Java',
   },
   {
-    image: 'https://ynoa-uploader.ynoacamino.site/uploads/1743101357_image%20%283%29.png',
+    image: 'https://ynoa-uploader.ynoacamino.me/uploads/1743101357_image%20%283%29.png',
     title: 'Minecraft Bedrock',
   },
 ];

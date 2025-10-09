@@ -9,6 +9,9 @@ const baseConfig: NextConfig = {
   experimental: {
     viewTransition: true,
   },
+  images: {
+    domains: ['admin.enderhost.online'],
+  },
 };
 
 const nextConfig: NextConfig = process.env.NODE_ENV === 'production'
