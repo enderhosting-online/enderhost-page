@@ -40,7 +40,7 @@ export default function Categoria(
               <span className="w-full text-2xl font-semibold">
                 {title}
               </span>
-              <div className="text-base flex flex-col gap-6 prose-img:rounded-lg prose-img:my-2" dangerouslySetInnerHTML={{ __html: answer }} />
+              <div className="text-base flex flex-col gap-6 prose-img:rounded-lg prose-img:aspect-video prose-img:bg-muted-foreground/5 prose-img:my-2" dangerouslySetInnerHTML={{ __html: answer }} />
             </motion.div>
           ))
         }

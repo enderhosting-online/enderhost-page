@@ -3,7 +3,6 @@ import Link from 'next/link';
 const googleInfo = [
   { name: `${new Date().getFullYear()} Ender Hosting`, url: '/' },
   { name: 'Política de Privacidad', url: '/politica-de-privacidad' },
-  { name: 'Términos', url: 'https://policies.google.com/terms' },
   { name: 'Ayuda', url: '/preguntas' },
 ];
 

@@ -164,7 +164,7 @@ export default function Prueba() {
         <Step index={3} title="Listo! Disfruta de tu prueba y comprueba la calidad de nuestros servidores!">
           <div className="w-full flex justify-center items-center">
             <img
-              src="https://ynoa-uploader.ynoacamino.site/uploads/1743372077_image%2020.png"
+              src="https://ynoa-uploader.ynoacamino.me/uploads/1760821898_image%20%283%29.webp"
               alt="prueba"
               className="w-full max-w-lg rounded-xl"
             />
