@@ -1,8 +1,5 @@
 import { IconBrandWhatsapp } from '@tabler/icons-react';
-import {
-  Facebook,
-  Instagram,
-} from 'lucide-react';
+import { Facebook, Instagram } from 'lucide-react';
 import Link from 'next/link';
 
 export default function FollowUs() {
@@ -22,7 +19,8 @@ export default function FollowUs() {
         <Facebook strokeWidth="1.5" />
       </Link>
       <Link
-        href="https://wa.me/51935761921"
+        href="https://wa.me/51918534289"
+        target="_blank"
         className="hover:text-muted-foreground"
       >
         <IconBrandWhatsapp strokeWidth="1.5" />
