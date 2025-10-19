@@ -5,7 +5,7 @@ import Header from '@/components/layout/header/Header';
 import Footer from '@/components/layout/footer/Footer';
 import Gradient from '@/components/layout/global/gradient';
 import ProgressBarProvider from '@/components/providers/ProgressBarProvider';
-import { GoogleAnalytics } from '@next/third-parties/google';
+import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google';
 import Particles from '@/components/layout/particles/particles';
 import { unstable_ViewTransition as ViewTransition } from 'react';
 
@@ -45,7 +45,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <GoogleAnalytics gaId="G-FYVWJD1CDR" />
+      <GoogleAnalytics gaId="G-D2X23339MH" />
       <body
         className={`${inter.variable} font-sans antialiased flex flex-col items-center overflow-x-hidden`}
       >
