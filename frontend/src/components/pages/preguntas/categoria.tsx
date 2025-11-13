@@ -7,6 +7,8 @@ import { Question } from '@/types/directus';
 import Masonry from 'react-smart-masonry';
 
 import { motion } from 'motion/react';
+import Link from 'next/link';
+import slugify from 'slugify';
 
 const breakpoints = { mobile: 0, desktop: 768 };
 
@@ -37,9 +39,9 @@ export default function Categoria(
               whileHover={{ borderColor: '#616671' }}
               id={sf(title)}
             >
-              <span className="w-full text-2xl font-semibold">
+              <Link href={`/preguntas#${slugify(title)}`} className="w-full text-2xl font-semibold hover:underlinen" id={slugify(title)}>
                 {title}
-              </span>
+              </Link>
               <div className="text-base flex flex-col gap-6 prose-img:rounded-lg prose-img:aspect-video prose-img:bg-muted-foreground/5 prose-img:my-2" dangerouslySetInnerHTML={{ __html: answer }} />
             </motion.div>
           ))
