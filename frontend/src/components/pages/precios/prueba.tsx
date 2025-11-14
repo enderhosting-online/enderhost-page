@@ -1,9 +1,11 @@
 'use client';
 
+import { Button } from '@/components/ui/button';
 import Section from '@/components/ui/section';
 import Title from '@/components/ui/title';
 import TypewriterText from '@/components/ui/typewriterText';
 import { motion } from 'motion/react';
+import Link from 'next/link';
 
 const messagesBoubleUser = [
   'Me gustaria hacer la prueba gratuita 😁😁',
@@ -168,6 +170,15 @@ export default function Prueba() {
               alt="prueba"
               className="w-full max-w-lg rounded-xl"
             />
+          </div>
+        </Step>
+        <Step index={4} title="Solicita ya! con el botón de abajo o escribenos por WhatsApp.">
+          <div className="w-full flex justify-center items-center">
+            <Button asChild size="lg">
+              <Link target="_blank" href="https://wa.me/51918534289?text=%C2%A1Hola!%20Me%20encantar%C3%ADa%20solicitar%20mi%20prueba%20gratuita%20de%20Ender%20Hosting.">
+                Solicitar tu prueba gratuita
+              </Link>
+            </Button>
           </div>
         </Step>
       </div>

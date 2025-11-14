@@ -74,6 +74,12 @@ class ApiService {
 
     return data as PrivacyPolicy;
   }
+
+  public async getTermsOfService(): Promise<PrivacyPolicy> {
+    const data = await this.client.request(readSingleton('terms_of_service'));
+
+    return data as PrivacyPolicy;
+  }
 }
 
 export const apiService = new ApiService(BACKEND_URL);

@@ -2,6 +2,7 @@ import { Button } from '@/components/ui/button';
 import Section from '@/components/ui/section';
 import { InicioSections } from '@/config/pages';
 import { apiService } from '@/services/api';
+import Link from 'next/link';
 import HeroFeatures from './heroFeatures';
 
 export default async function Hero() {
@@ -20,11 +21,15 @@ export default async function Hero() {
         </div>
         <HeroFeatures heroFeatures={heroFeatures} />
         <div className="gap-6 grid grid-cols-2 w-full max-w-88">
-          <Button size="lg" className="w-full" variant="secondary">
-            Ver planes
+          <Button size="lg" className="w-full" variant="secondary" asChild>
+            <Link href="/precios">
+              Ver planes
+            </Link>
           </Button>
           <Button size="lg">
-            ¡Prubalo gratis!
+            <Link href="/prueba-gratuita">
+              ¡Prubalo gratis!
+            </Link>
           </Button>
         </div>
       </div>
