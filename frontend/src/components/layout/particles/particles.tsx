@@ -1,17 +1,17 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
-import { usePathname } from 'next/navigation';
-import { useDevice } from '@/components/providers/DeviceProvider';
-import Particle from './particle';
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
+import { useDevice } from "@/components/providers/DeviceProvider";
+import Particle from "./particle";
 
 export default function Particles() {
   const [showParticles, setShowParticles] = useState(false);
   const { isMobile, height, width } = useDevice();
   const [particles, setParticles] = useState<
-  { id: number; x: number; y: number }[]
+    { id: number; x: number; y: number }[]
   >([]);
-  const path = usePathname();
+  const _path = usePathname();
 
   useEffect(() => {
     if (showParticles) return;
@@ -26,7 +26,7 @@ export default function Particles() {
     setParticles(newParticles);
 
     setShowParticles(true);
-  }, [path]);
+  }, [height, isMobile, showParticles, width]);
 
   useEffect(() => {
     if (!showParticles) return () => {};
@@ -42,11 +42,9 @@ export default function Particles() {
   }, [showParticles]);
 
   return (
-    <div className="w-full h-full flex justify-center items-center fixed top-0 left-0 -z-30">
-      {showParticles
-      && particles.map((p) => (
-        <Particle key={p.id} x={p.x} y={p.y} />
-      ))}
+    <div className="fixed top-0 left-0 -z-30 flex h-full w-full items-center justify-center">
+      {showParticles &&
+        particles.map((p) => <Particle key={p.id} x={p.x} y={p.y} />)}
     </div>
   );
 }

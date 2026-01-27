@@ -1,8 +1,9 @@
-import ExtendDescription from '@/components/pages/inicio/extendDescription';
-import HostingFeatures from '@/components/pages/inicio/hostingFeatures';
-import Hero from '@/components/pages/inicio/hero';
-import ImportantQuestions from '@/components/pages/inicio/importanQuestions';
-import Versiones from '@/components/pages/inicio/versiones';
+import ExtendDescription from "@/components/pages/inicio/extendDescription";
+import Hero from "@/components/pages/inicio/hero";
+import HostingFeatures from "@/components/pages/inicio/hostingFeatures";
+import ImportantQuestions from "@/components/pages/inicio/importanQuestions";
+import Locations from "@/components/pages/inicio/locations";
+import Versiones from "@/components/pages/inicio/versiones";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       <HostingFeatures />
       <Versiones />
       <ExtendDescription />
+      <Locations />
       <ImportantQuestions />
     </>
   );

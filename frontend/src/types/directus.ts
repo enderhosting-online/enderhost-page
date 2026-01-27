@@ -1,28 +1,28 @@
-export type SingleItem = Record<string, any>;
+export type SingleItem = Record<string, unknown>;
 
 export enum IconName {
-  Spigot = 'Spigot',
-  Forge = 'Forge',
-  Automation = 'Automation',
-  BoltFilled = 'BoltFilled',
-  Bulb = 'Bulb',
-  Map = 'Map',
-  Shield = 'Shield',
-  Table = 'Table',
-  TableFilled = 'TableFilled',
-  UserCog = 'UserCog',
-  Users = 'Users',
-  World = 'World',
-  HardDrive = 'HardDrive',
-  HardDriveDownload = 'HardDriveDownload',
-  MemoryStick = 'MemoryStick',
-  Smartphone = 'Smartphone',
-  UsersRound = 'UsersRound',
-  AppWindow = 'AppWindow',
-  Signal = 'Signal',
-  PackageCheck = 'PackageCheck',
-  MonitorCheck = 'MonitorCheck',
-  History = 'History',
+  Spigot = "Spigot",
+  Forge = "Forge",
+  Automation = "Automation",
+  BoltFilled = "BoltFilled",
+  Bulb = "Bulb",
+  Map = "Map",
+  Shield = "Shield",
+  Table = "Table",
+  TableFilled = "TableFilled",
+  UserCog = "UserCog",
+  Users = "Users",
+  World = "World",
+  HardDrive = "HardDrive",
+  HardDriveDownload = "HardDriveDownload",
+  MemoryStick = "MemoryStick",
+  Smartphone = "Smartphone",
+  UsersRound = "UsersRound",
+  AppWindow = "AppWindow",
+  Signal = "Signal",
+  PackageCheck = "PackageCheck",
+  MonitorCheck = "MonitorCheck",
+  History = "History",
 }
 
 export interface Icon {
@@ -74,8 +74,17 @@ export interface Pricing {
   price: number;
   block: string;
   features: {
-    pricing_features_id: PricingFeature
+    pricing_features_id: PricingFeature;
   }[];
+}
+
+export interface Location {
+  name: string;
+  mc_icon: string;
+  latency: number;
+  qualification: number;
+  description: string;
+  block: string;
 }
 
 export interface Question {

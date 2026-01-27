@@ -1,4 +1,4 @@
-import { motion } from 'motion/react';
+import { motion } from "motion/react";
 
 export default function Particle({ x, y }: { x: number; y: number }) {
   const size = Math.random() * 6 + 2;
@@ -7,7 +7,7 @@ export default function Particle({ x, y }: { x: number; y: number }) {
 
   return (
     <motion.div
-      className="absolute bg-purple-500 rounded-full z-0"
+      className="absolute z-0 rounded-full bg-purple-500"
       style={{
         width: size,
         height: size,
@@ -15,7 +15,10 @@ export default function Particle({ x, y }: { x: number; y: number }) {
         left: x,
       }}
       initial={{
-        opacity: 0, x: 0, y: 0, scale: 0,
+        opacity: 0,
+        x: 0,
+        y: 0,
+        scale: 0,
       }}
       animate={{
         opacity: [0, 1, 0.5],

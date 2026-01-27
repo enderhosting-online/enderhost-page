@@ -1,22 +1,21 @@
-import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
-import './globals.css';
-import Header from '@/components/layout/header/Header';
-import Footer from '@/components/layout/footer/Footer';
-import Gradient from '@/components/layout/global/gradient';
-import ProgressBarProvider from '@/components/providers/ProgressBarProvider';
-import { GoogleAnalytics } from '@next/third-parties/google';
-import Particles from '@/components/layout/particles/particles';
-import { unstable_ViewTransition as ViewTransition } from 'react';
-
-import { apiService } from '@/services/api';
-import { DeviceProvider } from '@/components/providers/DeviceProvider';
-import { defaultMetadataConfig } from '@/config/metadata';
-import WhatsappButton from '@/components/layout/WhatsappButton';
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import "./globals.css";
+import { GoogleAnalytics } from "@next/third-parties/google";
+import { unstable_ViewTransition as ViewTransition } from "react";
+import Footer from "@/components/layout/footer/Footer";
+import Gradient from "@/components/layout/global/gradient";
+import Header from "@/components/layout/header/Header";
+import Particles from "@/components/layout/particles/particles";
+import WhatsappButton from "@/components/layout/WhatsappButton";
+import { DeviceProvider } from "@/components/providers/DeviceProvider";
+import ProgressBarProvider from "@/components/providers/ProgressBarProvider";
+import { defaultMetadataConfig } from "@/config/metadata";
+import { apiService } from "@/services/api";
 
 const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
+  subsets: ["latin"],
+  variable: "--font-inter",
 });
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -34,7 +33,7 @@ export async function generateMetadata(): Promise<Metadata> {
       description: globalMetadata.description,
     };
   } catch (error) {
-    throw new Error('Error al generar metadata', { cause: error });
+    throw new Error("Error al generar metadata", { cause: error });
   }
 }
 
@@ -47,7 +46,7 @@ export default function RootLayout({
     <html lang="es">
       <GoogleAnalytics gaId="G-D2X23339MH" />
       <body
-        className={`${inter.variable} font-sans antialiased flex flex-col items-center overflow-x-hidden`}
+        className={`${inter.variable} flex flex-col items-center overflow-x-hidden font-sans antialiased`}
       >
         <ProgressBarProvider>
           <DeviceProvider>
@@ -56,7 +55,7 @@ export default function RootLayout({
             <WhatsappButton />
             <Header />
             <ViewTransition>
-              <main className="flex flex-col items-center w-full overflow-x-hidden">
+              <main className="flex w-full flex-col items-center overflow-x-hidden">
                 {children}
               </main>
             </ViewTransition>

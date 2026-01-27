@@ -2,7 +2,7 @@
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
-@plugin 'tailwind-scrollbar';
+@plugin "tailwind-scrollbar";
 @plugin "@tailwindcss/typography";
 
 .a {
@@ -115,10 +115,10 @@
 }
 
 .glassmorphism-diamond {
-  background-color: #43c2e8;
+  background-color: #288fad;
   background-image:
-    radial-gradient(at 47% 33%, hsl(174.14, 84%, 61%) 0, transparent 59%),
-    radial-gradient(at 82% 65%, hsl(178.14, 100%, 63%) 0, transparent 55%);
+    radial-gradient(at 47% 33%, hsl(185.14, 84%, 35%) 0, transparent 59%),
+    radial-gradient(at 82% 65%, hsl(190.14, 100%, 40%) 0, transparent 55%);
 }
 
 .glassmorphism-netherite {

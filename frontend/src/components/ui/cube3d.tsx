@@ -1,4 +1,4 @@
-import './cube3d.css';
+import "./cube3d.css";
 
 export default function Cube3d({ texture }: { texture: string }) {
   return (

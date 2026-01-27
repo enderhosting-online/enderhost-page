@@ -1,17 +1,4 @@
 import {
-  HardDrive as IconHardDrive,
-  HardDriveDownload as IconHardDriveDownload,
-  MemoryStick as IconMemoryStick,
-  Smartphone as IconSmartphone,
-  UsersRound as IconUsersRound,
-  AppWindow as IconAppWindow,
-  Signal as IconSignal,
-  PackageCheck as IconPackageCheck,
-  MonitorCheck as IconMonitorCheck,
-  History as IconHistory,
-} from 'lucide-react';
-
-import {
   IconAutomation,
   IconBoltFilled,
   IconBulb,
@@ -22,12 +9,25 @@ import {
   IconUserCog,
   IconUsers,
   IconWorld,
-} from '@tabler/icons-react';
+} from "@tabler/icons-react";
+import {
+  AppWindow as IconAppWindow,
+  HardDrive as IconHardDrive,
+  HardDriveDownload as IconHardDriveDownload,
+  History as IconHistory,
+  MemoryStick as IconMemoryStick,
+  MonitorCheck as IconMonitorCheck,
+  PackageCheck as IconPackageCheck,
+  Signal as IconSignal,
+  Smartphone as IconSmartphone,
+  UsersRound as IconUsersRound,
+} from "lucide-react";
 
-import IconForge from '@/components/icons/forge';
-import IconSpigot from '@/components/icons/spigot';
-import { IconName } from '@/types/directus';
+import IconForge from "@/components/icons/forge";
+import IconSpigot from "@/components/icons/spigot";
+import type { IconName } from "@/types/directus";
 
+// biome-ignore lint/suspicious/noExplicitAny: Because of mapping type definition
 export const iconMapper: { [key in IconName]: React.ComponentType<any> } = {
   Spigot: IconSpigot,
   Forge: IconForge,
@@ -53,10 +53,14 @@ export const iconMapper: { [key in IconName]: React.ComponentType<any> } = {
   History: IconHistory,
 };
 
-export function IconMapper({ name, className }: { name:IconName, className?: string }) {
+export function IconMapper({
+  name,
+  className,
+}: {
+  name: IconName;
+  className?: string;
+}) {
   const IconComponent = iconMapper[name];
 
-  return (
-    <IconComponent className={className} />
-  );
+  return <IconComponent className={className} />;
 }

@@ -1,10 +1,10 @@
-import { IconBrandWhatsapp } from '@tabler/icons-react';
+import { IconBrandWhatsapp } from "@tabler/icons-react";
 // import { Facebook, Instagram } from 'lucide-react';
-import Link from 'next/link';
+import Link from "next/link";
 
 export default function FollowUs() {
   return (
-    <div className="flex gap-6 flex-wrap">
+    <div className="flex flex-wrap gap-6">
       <span className="font-medium">Contactanos</span>
       {/* <Link
         href="https://instagram.com"

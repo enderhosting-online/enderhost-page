@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from "react";
 
 interface TypewriterTextProps {
   children: string;
@@ -15,14 +15,14 @@ function TypewriterText({
   speed = 50,
   loop = false,
   delay = 0,
-  className = '',
+  className = "",
 }: TypewriterTextProps) {
-  const [displayed, setDisplayed] = useState('');
+  const [displayed, setDisplayed] = useState("");
   const index = useRef(0);
   const timeout = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
-    setDisplayed('');
+    setDisplayed("");
     index.current = 0;
 
     function type() {
@@ -32,7 +32,7 @@ function TypewriterText({
         timeout.current = setTimeout(type, speed);
       } else if (loop) {
         timeout.current = setTimeout(() => {
-          setDisplayed('');
+          setDisplayed("");
           index.current = 0;
           type();
         }, 1000);

@@ -1,5 +1,5 @@
-import { cn } from '@/lib/utils';
-import React from 'react';
+import type React from "react";
+import { cn } from "@/lib/utils";
 
 type TitleProps<T extends React.ElementType> = {
   as?: T;
@@ -7,16 +7,19 @@ type TitleProps<T extends React.ElementType> = {
   children?: React.ReactNode;
 } & React.ComponentPropsWithoutRef<T>;
 
-function Title<T extends React.ElementType = 'h1'>({
+function Title<T extends React.ElementType = "h1">({
   as,
   className,
   children,
   ...props
 }: TitleProps<T>) {
-  const Component = as || 'h1';
+  const Component = as || "h1";
   return (
     <Component
-      className={cn('text-foreground text-4xl md:text-[2.65rem] rounded-lg py-4 text-center uppercase font-black w-full grid', className)}
+      className={cn(
+        "grid w-full rounded-lg py-4 text-center font-black text-4xl text-foreground uppercase md:text-[2.65rem]",
+        className,
+      )}
       {...props}
     >
       {children}

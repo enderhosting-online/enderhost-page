@@ -1,27 +1,26 @@
 /* eslint-disable no-console */
 
-import type { NextConfig } from 'next';
-import MillionLint from '@million/lint';
+import MillionLint from "@million/lint";
+import type { NextConfig } from "next";
 
 const baseConfig: NextConfig = {
-  output: 'standalone',
+  output: "standalone",
   reactStrictMode: false,
   experimental: {
     viewTransition: true,
   },
   images: {
-    domains: ['admin.enderhost.online'],
+    domains: ["admin.enderhost.online"],
   },
 };
 
-const nextConfig: NextConfig = process.env.NODE_ENV === 'production'
-  ? (() => {
-    console.info('⚡ Compilando con Million en modo producción');
-    return MillionLint.next({ rsc: true })(baseConfig);
-  })()
-  : (() => {
-    console.info('🚀 Compilando con configuración base (sin Million)');
-    return baseConfig;
-  })();
+const nextConfig: NextConfig =
+  process.env.NODE_ENV === "production"
+    ? (() => {
+        return MillionLint.next({ rsc: true })(baseConfig);
+      })()
+    : (() => {
+        return baseConfig;
+      })();
 
 export default nextConfig;

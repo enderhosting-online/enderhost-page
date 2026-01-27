@@ -9,8 +9,8 @@
   animation: rotate 10s infinite linear;
 }
 .single-box {
-  display: block;
   position: absolute;
+  display: block;
   width: 160px;
   height: 160px;
   transform-origin: 50% 50% 0;

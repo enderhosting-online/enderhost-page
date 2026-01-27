@@ -1,21 +1,27 @@
-'use client';
+"use client";
 
-import { HostingFeature } from '@/types/directus';
-import { motion } from 'motion/react';
-import { IconMapper } from '@/lib/icons';
+import { motion } from "motion/react";
+import { Glass } from "@/components/ui/glass";
+import { IconMapper } from "@/lib/icons";
+import type { HostingFeature } from "@/types/directus";
 
 interface HostingFeaturesCardsProps {
   hostingFeatures: HostingFeature[];
 }
 
-export default function HostingFeaturesCards({ hostingFeatures }: HostingFeaturesCardsProps) {
+export default function HostingFeaturesCards({
+  hostingFeatures,
+}: HostingFeaturesCardsProps) {
   return (
-    <div className="glassmorphism w-full rounded-xl p-6 md:p-8 grid sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
-      {
-        hostingFeatures.map((feature) => (
+    <div className="glassmorphism grid w-full gap-6 rounded-xl p-6 sm:grid-cols-2 md:grid-cols-3 md:gap-8 md:p-8">
+      {hostingFeatures.map((feature) => (
+        <Glass
+          key={feature.title}
+          className="flex flex-col gap-4"
+          paddingBottom="xl"
+          asChild
+        >
           <motion.div
-            key={feature.title}
-            className="flex flex-col gap-4 bg-[#111928]/75 rounded-lg p-6 pb-10 backdrop-blur-lg"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{
@@ -23,12 +29,12 @@ export default function HostingFeaturesCards({ hostingFeatures }: HostingFeature
               amount: 0.15,
             }}
           >
-            <IconMapper className="size-16 mb-3" name={feature.icon.name} />
-            <h3 className="text-xl font-semibold">{feature.title}</h3>
+            <IconMapper className="mb-3 size-16" name={feature.icon.name} />
+            <h3 className="font-semibold text-xl">{feature.title}</h3>
             <p>{feature.content}</p>
           </motion.div>
-        ))
-      }
+        </Glass>
+      ))}
     </div>
   );
 }
