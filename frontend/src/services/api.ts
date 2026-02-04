@@ -13,6 +13,7 @@ import type {
   HeroFeature,
   HostingFeature,
   Location,
+  PaymentMethod,
   Pricing,
   PrivacyPolicy,
   QuestionSection,
@@ -116,6 +117,12 @@ class ApiService {
     const data = await this.client.request(readItems("locations"));
 
     return data as Location[];
+  }
+
+  public async getPaymentMethods(): Promise<PaymentMethod[]> {
+    const data = await this.client.request(readItems("method_payment"));
+
+    return data as PaymentMethod[];
   }
 }
 

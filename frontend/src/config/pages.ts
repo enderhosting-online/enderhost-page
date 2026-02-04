@@ -14,6 +14,7 @@ export enum PreciosSections {
   PLAN_HIERRO = "precios-plan-hierro",
   PLAN_DIAMANTE = "precios-plan-diamante",
   PLAN_NETHERITA = "precios-plan-netherita",
+  METODOS_DE_PAGO = "metodos-de-pago",
 }
 
 export enum PreguntasSections {
@@ -66,7 +67,7 @@ const pageConfig: PageConfigInterface = {
       ],
     },
     {
-      name: "Precios",
+      name: "Precios y métodos de pago",
       path: "/precios",
       sections: [
         {
@@ -84,6 +85,10 @@ const pageConfig: PageConfigInterface = {
         {
           name: "Plan Netherita",
           id: PreciosSections.PLAN_NETHERITA,
+        },
+        {
+          name: "Métodos de pago",
+          id: PreciosSections.METODOS_DE_PAGO,
         },
       ],
     },

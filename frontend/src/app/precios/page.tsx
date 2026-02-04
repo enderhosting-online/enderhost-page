@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import MetodosDePago from "@/components/pages/precios/metodosDePago";
 import Precios from "@/components/pages/precios/precios";
 
 export const metadata: Metadata = {
@@ -8,5 +9,10 @@ export const metadata: Metadata = {
 };
 
 export default function PrecioPage() {
-  return <Precios />;
+  return (
+    <>
+      <Precios />
+      <MetodosDePago />
+    </>
+  );
 }

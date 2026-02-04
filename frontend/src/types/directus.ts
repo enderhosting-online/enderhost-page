@@ -87,6 +87,12 @@ export interface Location {
   block: string;
 }
 
+export interface PaymentMethod {
+  name: string;
+  image: string;
+  description: string;
+}
+
 export interface Question {
   title: string;
   answer: string;

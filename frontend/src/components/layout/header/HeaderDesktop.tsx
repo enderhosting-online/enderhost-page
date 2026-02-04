@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import pagesConfig from "@/config/pages";
 import { cn } from "@/lib/utils";
@@ -9,9 +11,12 @@ export default function HeaderDesktop() {
         <Link
           key={pagina.path}
           href={pagina.path}
-          className={cn("font-semibold text-sm uppercase")}
+          className={cn("group relative font-semibold text-sm uppercase")}
         >
-          {pagina.name}
+          <span className="absolute inset-0 flex scale-110 items-center justify-center opacity-0 blur-lg transition-all duration-300 group-hover:scale-100 group-hover:opacity-70">
+            {pagina.name}
+          </span>
+          <span className="relative z-10">{pagina.name}</span>
         </Link>
       ))}
     </nav>
