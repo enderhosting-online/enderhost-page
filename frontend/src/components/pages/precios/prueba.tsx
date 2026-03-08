@@ -9,8 +9,8 @@ import Title from "@/components/ui/title";
 const messagesBoubleUser = [
   "Me gustaria hacer la prueba gratuita 😁😁",
   "- En la version 1.20.1",
-  "- Con 6gb de ram",
   "- Y usando forge para mods",
+  "Mi correo para la creacion de la cuenta de prueba es: tu_correo@example.com",
 ];
 
 const messagesBoubleUserLength = messagesBoubleUser.reduce(
@@ -20,9 +20,7 @@ const messagesBoubleUserLength = messagesBoubleUser.reduce(
 
 const messagesBoubleSupport = [
   "POR SUPUESTO 🥳🥳",
-  "Aqui tienes tus credenciales",
-  "- usuario: prueba123",
-  "- password: 123prueba123",
+  "Revisa tu correo en unos minutos para la confirmacion y los datos de tu cuenta de prueba.",
   "Disfruta la prueba 🙌🙌",
 ];
 
