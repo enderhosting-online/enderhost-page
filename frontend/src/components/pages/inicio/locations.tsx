@@ -52,7 +52,7 @@ export default async function Locations() {
                   <div className="flex items-center gap-2">
                     <img
                       className="w-9"
-                      src="https://admin.enderhost.online/assets/6af82cc9-9a90-40d8-b70b-37754575c524"
+                      src="https://cms.enderhost.online/assets/6af82cc9-9a90-40d8-b70b-37754575c524"
                       alt="ping"
                     />
                     <span>{latency} ms</span>
@@ -65,7 +65,7 @@ export default async function Locations() {
                       <img
                         key={`${name}-star-${index}`}
                         className="w-7"
-                        src="https://admin.enderhost.online/assets/a676eda0-4771-43eb-b053-cb16473517ab"
+                        src="https://cms.enderhost.online/assets/a676eda0-4771-43eb-b053-cb16473517ab"
                         alt="star"
                       />
                     ))}
@@ -104,7 +104,7 @@ export default async function Locations() {
               <div className="flex items-center gap-2">
                 <img
                   className="w-9"
-                  src="https://admin.enderhost.online/assets/4916b66a-7a0e-45d5-a65b-1d8194e1ffe6"
+                  src="https://cms.enderhost.online/assets/4916b66a-7a0e-45d5-a65b-1d8194e1ffe6"
                   alt="ping"
                 />
                 <span>{externalLocation.latency} ms</span>
@@ -118,7 +118,7 @@ export default async function Locations() {
                     <img
                       key={`${externalLocation.name}-star-${index}`}
                       className="w-7"
-                      src="https://admin.enderhost.online/assets/a676eda0-4771-43eb-b053-cb16473517ab"
+                      src="https://cms.enderhost.online/assets/a676eda0-4771-43eb-b053-cb16473517ab"
                       alt="star"
                     />
                   ),

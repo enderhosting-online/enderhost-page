@@ -10,7 +10,7 @@ const baseConfig: NextConfig = {
     viewTransition: true,
   },
   images: {
-    domains: ["admin.enderhost.online"],
+    domains: ["cms.enderhost.online"],
   },
 };
 
